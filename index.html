@@ -3,52 +3,32 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>AURA COUTURE — Digital Flagship</title>
+     <title>EZINSPIRE — Digital Flagship</title>
      <link rel="stylesheet" href="css/styles.css">
  </head>
  <body>
 
-     <!-- Background Layer: Cinematic Silk Simulation -->
      <canvas id="silk-canvas"></canvas>
- 
-     <!-- Top Header Layout -->
+
      <header class="luxury-header">
          <div class="brand-logo">AURA COUTURE</div>
-         <!-- Corner Overlapping Navigation Trigger -->
-         <nav class="corner-menu" id="menu-trigger" aria-label="Toggle Menu">
-             <span class="menu-label" id="menu-text">EXPLORE</span>
+        
+         <nav class="corner-menu" id="menu-trigger" aria-label="Open Menu">
+             <span class="menu-label">EXPLORE</span>
              <div class="burger-icon">
                  <span class="line"></span>
                  <span class="line"></span>
              </div>
          </nav>
      </header>
- 
-     <!-- Luxury Slide-Out Menu Drawer Panel -->
-     <div class="menu-drawer" id="menu-drawer">
-         <div class="drawer-content">
-             <ul class="drawer-links">
-                 <li><a href="#" class="drawer-link">01 / COLLECTIONS</a></li>
-                 <li><a href="#" class="drawer-link">02 / BESPOKE TAILORING</a></li>
-                 <li><a href="#" class="drawer-link">03 / THE ATELIER FILMS</a></li>
-                 <li><a href="#" class="drawer-link">04 / ABOUT AURA</a></li>
-             </ul>
-             <div class="drawer-footer">
-                 <span>GLOBAL SHIPPING AVAILABLE</span>
-                 <span>©2026 AURA COUTURE</span>
-             </div>
-         </div>
-     </div>
- 
-     <!-- Full-Screen Interactive Hero Section -->
+
      <main class="hero-viewport">
-         <!-- Overlapping Luxury Carousel Container -->
-         <div class="luxury-carousel" id="carousel">
+
+        <div class="luxury-carousel" id="carousel">
              
-             <!-- Card 01: Active State -->
+
              <div class="carousel-card active" data-index="0">
                  <div class="image-wrapper">
-                     <!-- REPLACE THIS URL WITH YOUR INSTAGRAM/PINTEREST IMAGE LINK -->
                      <img src="https://unsplash.com" alt="Couture Mini Dress">
                  </div>
                  <div class="card-meta">
@@ -56,11 +36,9 @@
                      <h1 class="item-title">SILKEN MINI DRESS</h1>
                  </div>
              </div>
- 
-             <!-- Card 02: Overlapping / Next State -->
+
              <div class="carousel-card next" data-index="1">
                  <div class="image-wrapper">
-                     <!-- REPLACE THIS URL WITH YOUR SECOND CUSTOM IMAGE LINK -->
                      <img src="https://unsplash.com" alt="Asymmetrical Blazer">
                  </div>
                  <div class="card-meta">
@@ -70,15 +48,14 @@
              </div>
  
          </div>
-        
-         <!-- Subtle Cinematic Carousel Navigation -->
+
          <div class="carousel-controls">
              <button class="ctrl-btn" id="prev-btn">PREV</button>
              <span class="fraction-indicator" id="fraction">01 / 02</span>
              <button class="ctrl-btn" id="next-btn">NEXT</button>
          </div>
      </main>
-
+ 
      <script src="js/silk.js"></script>
      <script src="js/main.js"></script>
  </body>
