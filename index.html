@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>AURA COUTURE — Digital Flagship</title>
+     <link rel="stylesheet" href="css/styles.css">
+ </head>
+ <body>
+ 
+
+     <canvas id="silk-canvas"></canvas>
+ 
+    
+     <header class="luxury-header">
+         <div class="brand-logo">AURA COUTURE</div>
+
+         <nav class="corner-menu" id="menu-trigger" aria-label="Open Menu">
+             <span class="menu-label">EXPLORE</span>
+             <div class="burger-icon">
+                 <span class="line"></span>
+                 <span class="line"></span>
+             </div>
+         </nav>
+     </header>
+ 
+
+     <main class="hero-viewport">
+
+         <div class="luxury-carousel" id="carousel">
+     
+
+             <div class="carousel-card active" data-index="0">
+                 <div class="image-wrapper">
+                     <img src="https://unsplash.com" alt="Couture Mini Dress">
+                 </div>
+                 <div class="card-meta">
+                     <span class="collection-tag">COLLECTION N°01</span>
+                     <h1 class="item-title">SILKEN MINI DRESS</h1>
+                 </div>
+             </div>
+ 
+
+             <div class="carousel-card next" data-index="1">
+                 <div class="image-wrapper">
+                     <img src="https://unsplash.com" alt="Asymmetrical Blazer">
+                 </div>
+                 <div class="card-meta">
+                     <span class="collection-tag">COLLECTION N°01</span>
+                     <h1 class="item-title">ASYMMETRIC COAT</h1>
+                 </div>
+             </div>
+
+         </div>
+    
+
+         <div class="carousel-controls">
+             <button class="ctrl-btn" id="prev-btn">PREV</button>
+             <span class="fraction-indicator" id="fraction">01 / 02</span>
+             <button class="ctrl-btn" id="next-btn">NEXT</button>
+         </div>
+     </main>
+ 
+     <script src="js/silk.js"></script>
+     <script src="js/main.js"></script>
+ </body>
+ </html>
