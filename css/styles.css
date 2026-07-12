@@ -193,19 +193,20 @@ body {
 .navigation-overlay {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
+    right: 0;             /* ← Aligns the panel to the right edge of the window */
+    width: 30vw;          /* ← Thins the container down to exactly 30% of screen width */
     height: 100vh;
     z-index: 90;
     pointer-events: none;
-    display: none; /* ← Change from 'flex' to 'none' to unblock your clicks */
+    display: none;        
     align-items: center;
-    padding-left: 10%;
+    padding-left: 55px;   /* ← Balanced left padding inside the column */
 }
 
-.navigation-overlay.menu-open {
-    pointer-events: auto;
-    display: flex; /* ← Changes back to flex only when menu is active */
+@media (max-width: 768px) {
+    .navigation-overlay {
+        width: 75vw;      /* ← Becomes slightly wider on mobile for text readability */
+    }
 }
 
 .overlay-background {
@@ -241,14 +242,14 @@ body {
 
 .menu-link {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 3.5rem;
+    font-size: 1.4rem;             /* ← Reduced dramatically from 3.5rem to look sharp and minimal */
     font-weight: 300;
     color: #1A1A1A;
     text-decoration: none;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.18em;        /* ← Widened letter tracking to preserve high-end editorial feel */
     display: flex;
-    align-items: baseline;
-    gap: 20px;
+    align-items: center;
+    gap: 15px;
     transform: translate3d(0, 100%, 0);
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1);
 }
@@ -261,12 +262,13 @@ body {
 
 .link-num {
     font-family: 'Inter', sans-serif;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    color: #8A857C;
+    font-size: 0.65rem;            /* ← Made the numbering proportionally smaller */
+    letter-spacing: 0.05em;
+    color: #A09B92;
+    position: relative;
+    top: -1px;                     /* ← Sits perfectly level with the baseline of small text */
 }
 
-/* Fine-line interactive underline on hover */
 .menu-link::after {
     content: '';
     width: 0;
@@ -278,7 +280,7 @@ body {
 }
 
 .menu-link:hover::after {
-    width: 50px;
+    width: 25px;                   /* ← Reduced from 50px to stay proportional to small links */
 }
 
 /* Animating Burger Icon lines into an 'X' */
