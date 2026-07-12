@@ -1,106 +1,40 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>AURA COUTURE — Digital Flagship</title>
-     <link rel="stylesheet" href="css/styles.css">
- </head>
- <body>
-
-
-     <canvas id="silk-canvas"></canvas>
-
-
-     <header class="luxury-header">
-         <div class="brand-logo">AURA COUTURE</div>
-
-         <nav class="corner-menu" id="menu-trigger" aria-label="Toggle Menu">
-             <span class="menu-label" id="menu-text">EXPLORE</span>
-             <div class="burger-icon">
-                 <span class="line"></span>
-                 <span class="line"></span>
-             </div>
-         </nav>
-     </header>
- 
-
-     <div class="menu-drawer" id="menu-drawer">
-         <div class="drawer-content">
-             <ul class="drawer-links">
-                 <li><a href="#" class="drawer-link">01 / COLLECTIONS</a></li>
-                 <li><a href="#" class="drawer-link">02 / BESPOKE TAILORING</a></li>
-                 <li><a href="#" class="drawer-link">03 / THE ATELIER FILMS</a></li>
-                 <li><a href="#" class="drawer-link">04 / ABOUT AURA</a></li>
-             </ul>
-             <div class="drawer-footer">
-                 <span>GLOBAL SHIPPING AVAILABLE</span>
-                 <span>©2026 AURA COUTURE</span>
-             </div>
-         </div>
-     </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA COUTURE — Digital Flagship</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="silk-canvas"></canvas>
+    <header class="luxury-header">
+        <div class="brand-logo">AURA COUTURE</div>
+        <nav class="corner-menu" id="menu-trigger" aria-label="Toggle Menu">
+            <span class="menu-label" id="menu-text">EXPLORE</span>
+            <div class="burger-icon"><span class="line"></span><span class="line"></span></div>
+        </nav>
+    </header>
+    <div class="menu-drawer" id="menu-drawer">
+        <div class="drawer-content">
+            <ul class="drawer-links">
+                <li><a href="#" class="drawer-link">01 / COLLECTIONS</a></li>
+                <li><a href="#" class="drawer-link">02 / BESPOKE TAILORING</a></li>
+                <li><a href="#" class="drawer-link">03 / THE ATELIER FILMS</a></li>
+                <li><a href="#" class="drawer-link">04 / ABOUT AURA</a></li>
+            </ul>
+        </div>
+    </div>
     <section class="editorial-grid">
-        <div class="grid-item item-large">
-            <div class="grid-image-wrapper">
-               
-                <img src="https://unsplash.com/photos/a-pile-of-shirts-sitting-on-top-of-each-other-QsqqL25xSbQ" alt="Editorial Silhouette">
-            </div>
-            <div class="grid-meta-text">
-                <span class="grid-num">01 // VISIONS</span>
-                <p class="grid-desc">Sculptural drapes designed for fluid human motion.</p>
-            </div>
-        </div>
-        <div class="grid-item item-small">
-            <div class="grid-image-wrapper">
-                
-                <img src="https://unsplash.com/photos/woman-in-white-tube-dress-dOlFeKIDuRg" alt="Texture Close-up">
-            </div>
-            <div class="grid-meta-text">
-                <span class="grid-num">02 // TEXTURES</span>
-                <p class="grid-desc">Woven heavy silks sourced from organic mills.</p>
-            </div>
-        </div>
+        <div class="grid-item item-large"><div class="grid-image-wrapper"><img src="https://unsplash.com" alt="Editorial"></div><div class="grid-meta-text"><span class="grid-num">01 // VISIONS</span><p class="grid-desc">Sculptural drapes.</p></div></div>
+        <div class="grid-item item-small"><div class="grid-image-wrapper"><img src="https://unsplash.com" alt="Texture"></div><div class="grid-meta-text"><span class="grid-num">02 // TEXTURES</span><p class="grid-desc">Woven heavy silks.</p></div></div>
     </section>
-
-     <main class="hero-viewport">
-
-         <div class="luxury-carousel" id="carousel">
-           
-
-             <div class="carousel-card active" data-index="0">
-                 <div class="image-wrapper">
-
-                     <img src="https://unsplash.com/photos/a-black-jacket-hanging-on-a-clothes-line-next-to-a-red-dress-9gZ0KgcHInc" alt="Couture Mini Dress">
-                 </div>
-                 <div class="card-meta">
-                     <span class="collection-tag">COLLECTION N°01</span>
-                     <h1 class="item-title">SILKEN MINI DRESS</h1>
-                 </div>
-             </div>
-
-
-             <div class="carousel-card next" data-index="1">
-                 <div class="image-wrapper">
-
-                     <img src="https://unsplash.com/photos/woman-in-red-long-sleeve-dress-p7I07kuPSyU" alt="Asymmetrical Blazer">
-                 </div>
-                 <div class="card-meta">
-                     <span class="collection-tag">COLLECTION N°01</span>
-                     <h1 class="item-title">ASYMMETRIC COAT</h1>
-                 </div>
-             </div>
-
-         </div>
-         
-
-         <div class="carousel-controls">
-             <button class="ctrl-btn" id="prev-btn">PREV</button>
-             <span class="fraction-indicator" id="fraction">01 / 02</span>
-             <button class="ctrl-btn" id="next-btn">NEXT</button>
-         </div>
-     </main>
- 
-     <script src="js/silk.js"></script>
-     <script src="js/main.js"></script>
- </body>
- </html>
+    <main class="hero-viewport">
+        <div class="luxury-carousel" id="carousel">
+            <div class="carousel-card active" data-index="0"><div class="image-wrapper"><img src="https://unsplash.com" alt="Dress"></div><div class="card-meta"><span class="collection-tag">COLLECTION N°01</span><h1 class="item-title">SILKEN DRESS</h1></div></div>
+        </div>
+        <div class="carousel-controls"><button class="ctrl-btn" id="prev-btn">PREV</button><span class="fraction-indicator" id="fraction">01 / 02</span><button class="ctrl-btn" id="next-btn">NEXT</button></div>
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>
