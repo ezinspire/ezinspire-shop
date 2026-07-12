@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleMenu() {
        
-        menuTrigger.classList.toggle('active-nav');
+        document.querySelector('.luxury-header').classList.toggle('active-nav');
        
         const isOpened = navOverlay.classList.toggle('menu-open');
         
@@ -55,3 +55,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+});
