@@ -198,15 +198,14 @@ body {
     height: 100vh;
     z-index: 90;
     pointer-events: none;
-    display: flex;
+    display: none; /* ← Change from 'flex' to 'none' to unblock your clicks */
     align-items: center;
     padding-left: 10%;
-    visibility: hidden;
 }
 
 .navigation-overlay.menu-open {
     pointer-events: auto;
-    visibility: visible;
+    display: flex; /* ← Changes back to flex only when menu is active */
 }
 
 .overlay-background {
