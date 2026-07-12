@@ -4,19 +4,16 @@
      const prevBtn = document.getElementById('prev-btn');
      const fractionIndicator = document.getElementById('fraction');
      
-
      const menuTrigger = document.getElementById('menu-trigger');
      const menuDrawer = document.getElementById('menu-drawer');
      const menuText = document.getElementById('menu-text');
      
      let activeIndex = 0;
  
-
      menuTrigger.addEventListener('click', () => {
          const isOpen = menuDrawer.classList.toggle('open');
          menuTrigger.classList.toggle('open');
          
-
          menuText.textContent = isOpen ? "CLOSE" : "EXPLORE";
      });
  
@@ -65,7 +62,7 @@
         
         cursor.style.left = `${cursorX}px`;
         cursor.style.top = `${cursorY}px`;
-        
+
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
