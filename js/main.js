@@ -31,4 +31,27 @@ document.addEventListener('DOMContentLoaded', () => {
         activeIndex = (activeIndex - 1 + cards.length) % cards.length;
         transitionCarousel(activeIndex);
     });
-});
+       
+    const menuTrigger = document.getElementById('menu-trigger');
+    const navOverlay = document.getElementById('nav-overlay');
+    const menuLinks = document.querySelectorAll('.menu-link');
+
+    function toggleMenu() {
+       
+        menuTrigger.classList.toggle('active-nav');
+       
+        const isOpened = navOverlay.classList.toggle('menu-open');
+        
+        menuTrigger.setAttribute('aria-label', isOpened ? 'Close Menu' : 'Open Menu');
+        navOverlay.setAttribute('aria-hidden', !isOpened);
+    }
+
+    menuTrigger.addEventListener('click', toggleMenu);
+
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (navOverlay.classList.contains('menu-open')) {
+                toggleMenu();
+            }
+        });
+    });
