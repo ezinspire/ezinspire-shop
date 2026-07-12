@@ -7,16 +7,16 @@
      <link rel="stylesheet" href="css/styles.css">
  </head>
  <body>
- 
+
 
      <canvas id="silk-canvas"></canvas>
- 
-    
+
+
      <header class="luxury-header">
          <div class="brand-logo">AURA COUTURE</div>
 
-         <nav class="corner-menu" id="menu-trigger" aria-label="Open Menu">
-             <span class="menu-label">EXPLORE</span>
+         <nav class="corner-menu" id="menu-trigger" aria-label="Toggle Menu">
+             <span class="menu-label" id="menu-text">EXPLORE</span>
              <div class="burger-icon">
                  <span class="line"></span>
                  <span class="line"></span>
@@ -25,13 +25,30 @@
      </header>
  
 
+     <div class="menu-drawer" id="menu-drawer">
+         <div class="drawer-content">
+             <ul class="drawer-links">
+                 <li><a href="#" class="drawer-link">01 / COLLECTIONS</a></li>
+                 <li><a href="#" class="drawer-link">02 / BESPOKE TAILORING</a></li>
+                 <li><a href="#" class="drawer-link">03 / THE ATELIER FILMS</a></li>
+                 <li><a href="#" class="drawer-link">04 / ABOUT AURA</a></li>
+             </ul>
+             <div class="drawer-footer">
+                 <span>GLOBAL SHIPPING AVAILABLE</span>
+                 <span>©2026 AURA COUTURE</span>
+             </div>
+         </div>
+     </div>
+
+
      <main class="hero-viewport">
 
          <div class="luxury-carousel" id="carousel">
-     
+           
 
              <div class="carousel-card active" data-index="0">
                  <div class="image-wrapper">
+
                      <img src="https://unsplash.com" alt="Couture Mini Dress">
                  </div>
                  <div class="card-meta">
@@ -39,10 +56,11 @@
                      <h1 class="item-title">SILKEN MINI DRESS</h1>
                  </div>
              </div>
- 
+
 
              <div class="carousel-card next" data-index="1">
                  <div class="image-wrapper">
+
                      <img src="https://unsplash.com" alt="Asymmetrical Blazer">
                  </div>
                  <div class="card-meta">
@@ -52,7 +70,7 @@
              </div>
 
          </div>
-    
+         
 
          <div class="carousel-controls">
              <button class="ctrl-btn" id="prev-btn">PREV</button>
