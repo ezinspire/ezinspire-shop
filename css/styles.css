@@ -189,3 +189,104 @@ body {
     letter-spacing: 0.1em;
     color: #8A857C;
 }
+
+.navigation-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 90;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    visibility: hidden;
+}
+
+.navigation-overlay.menu-open {
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.overlay-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(249, 248, 246, 0.97); /* Matches your Cream background */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.navigation-overlay.menu-open .overlay-background {
+    opacity: 1;
+}
+
+.menu-content {
+    position: relative;
+    z-index: 2;
+}
+
+.menu-list {
+    list-style: none;
+}
+
+.menu-list li {
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.menu-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: #1A1A1A;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    transform: translate3d(0, 100%, 0);
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+/* Staggered lookbook entrance */
+.navigation-overlay.menu-open .menu-link {
+    transform: translate3d(0, 0, 0);
+    transition-delay: calc(var(--item-index) * 0.06s);
+}
+
+.link-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    color: #8A857C;
+}
+
+/* Fine-line interactive underline on hover */
+.menu-link::after {
+    content: '';
+    width: 0;
+    height: 1px;
+    background-color: #1A1A1A;
+    display: block;
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+    align-self: center;
+}
+
+.menu-link:hover::after {
+    width: 50px;
+}
+
+/* Animating Burger Icon lines into an 'X' */
+.active-nav .burger-icon .line:nth-child(1) {
+    transform: translateY(3.5px) rotate(45deg);
+}
+
+.active-nav .burger-icon .line:nth-child(2) {
+    transform: translateY(-3.5px) rotate(-45deg);
+}
