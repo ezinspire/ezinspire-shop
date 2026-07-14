@@ -8,8 +8,8 @@
 }
 
 body {
-    background-color: #F9F8F6; /* Luxury Cream/Alabaster background */
-    color: #1A1A1A;
+    background-color: #FFFFFF; /* Luxury White/Professional crisp white background */
+    color: #000000;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
     height: 100vh;
@@ -25,6 +25,7 @@ body {
     z-index: 1;
     pointer-events: none;
     opacity: 0.65;
+    background-color: #F4F4F4
 }
 
 .luxury-header {
@@ -69,7 +70,7 @@ body {
 .burger-icon .line {
     width: 100%;
     height: 1px;
-    background-color: #1A1A1A;
+    background-color: #000000;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -145,7 +146,7 @@ body {
     display: block;
     font-size: 0.65rem;
     letter-spacing: 0.4em;
-    color: #8A857C;
+    color: #111111;
     margin-bottom: 10px;
 }
 
@@ -155,7 +156,7 @@ body {
     font-weight: 300;
     letter-spacing: -0.02em;
     line-height: 1.1;
-    color: #1A1A1A;
+    color: #111111;
 }
 
 .carousel-controls {
@@ -174,7 +175,7 @@ body {
     font-size: 0.7rem;
     letter-spacing: 0.3em;
     cursor: pointer;
-    color: #1A1A1A;
+    color: #111111;
     padding: 10px;
     transition: opacity 0.3s;
 }
@@ -187,7 +188,7 @@ body {
     font-size: 0.75rem;
     font-weight: 300;
     letter-spacing: 0.1em;
-    color: #8A857C;
+    color: #111111;
 }
 
 .navigation-overlay {
@@ -215,7 +216,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(249, 248, 246, 0.97); /* Matches your Cream background */
+    background-color: rgba(255, 255, 255, 0.97); /* Matches your White background */
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     opacity: 0;
@@ -244,7 +245,7 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.4rem;             /* ← Reduced dramatically from 3.5rem to look sharp and minimal */
     font-weight: 300;
-    color: #1A1A1A;
+    color: #111111;
     text-decoration: none;
     letter-spacing: 0.18em;        /* ← Widened letter tracking to preserve high-end editorial feel */
     display: flex;
@@ -264,7 +265,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 0.65rem;            /* ← Made the numbering proportionally smaller */
     letter-spacing: 0.05em;
-    color: #A09B92;
+    color: #111111;
     position: relative;
     top: -1px;                     /* ← Sits perfectly level with the baseline of small text */
 }
@@ -273,7 +274,7 @@ body {
     content: '';
     width: 0;
     height: 1px;
-    background-color: #1A1A1A;
+    background-color: #111111;
     display: block;
     transition: width 0.5s cubic-bezier(0.25, 1, 0.3, 1);
     align-self: center;
