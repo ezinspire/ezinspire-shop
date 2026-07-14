@@ -151,10 +151,10 @@ body {
 }
 
 .item-title {
-    font-family: 'Futura', 'Montserrat', 'Helvetica Neue', sans-serif;
-    font-size: 1.25rem;       /* Small, deliberate, and expensive scale */
-    font-weight: 700;         /* Bold and highly eye-catching */
-    letter-spacing: 0.4em;    /* Dramatic, ultra-wide luxury tracking */
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 100;          /* Ultra-thin, delicate luxury lines */
+    letter-spacing: 0.38em;    /* Dramatic, airy fashion-forward tracking */
     line-height: 1.4;
     color: #111111;
     text-transform: uppercase;
