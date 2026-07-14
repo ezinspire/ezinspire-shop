@@ -151,12 +151,13 @@ body {
 }
 
 .item-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 3rem;
-    font-weight: 300;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
+    font-family: 'Futura', 'Montserrat', 'Helvetica Neue', sans-serif;
+    font-size: 1.25rem;       /* Small, deliberate, and expensive scale */
+    font-weight: 700;         /* Bold and highly eye-catching */
+    letter-spacing: 0.4em;    /* Dramatic, ultra-wide luxury tracking */
+    line-height: 1.4;
     color: #111111;
+    text-transform: uppercase;
 }
 
 .carousel-controls {
