@@ -291,3 +291,15 @@ body {
 .active-nav .burger-icon .line:nth-child(2) {
     transform: translateY(-3.5px) rotate(-45deg);
 }
+/* Make background white and text black */
+html, body, main, section {
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+}
+/* Make the silk fluid movement pastel grey */
+canvas, svg, .wave-vector, .fluid-canvas {
+    background-color: #FFFFFF !important;
+    fill: #F2F2F2 !important; 
+    mix-blend-mode: multiply !important;
+}
+
