@@ -324,7 +324,6 @@ body {
     transition: transform 0.8s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
-/* Staggered lookbook entrance */
 .navigation-overlay.menu-open .menu-link {
     transform: translate3d(0, 0, 0);
     transition-delay: calc(var(--item-index) * 0.06s);
@@ -353,7 +352,6 @@ body {
     width: 25px;                   /* ← Reduced from 50px to stay proportional to small links */
 }
 
-/* Animating Burger Icon lines into an 'X' */
 .active-nav .burger-icon .line:nth-child(1) {
     transform: translateY(3.5px) rotate(45deg);
 }
