@@ -214,52 +214,68 @@ body {
 }
 
 @media (max-width: 768px) {
-    .navigation-overlay {
-        width: 75vw; /* ← Becomes slightly wider on mobile for text readability */
+    body {
+        overflow-x: hidden;
     }
     
-    .luxury-carousel {
-        width: 90vw;   
-        height: 50vh;   
+   .luxury-carousel {
+        width: 100vw;       /* Spans across full viewport screen width */
+        height: 55vh;       /* Keeps plenty of breathing room vertically */
+        position: relative;
+        left: 0;
+        margin: 0 auto; 
     }
     
     .carousel-card {
-        width: 70vw;          
-        height: 70vw;         /* Setting height to 'vw' locks it into a perfect square */
-        left: 50%;            /* Centers the slide horizontally on mobile screens */
-        top: 40%;             /* Centers the slide vertically */
-        transform: translate3d(-50%, -50%, 0) scale(0.9) !important; /* Re-aligns position coordinates */
+        width: 75vw;        /* Balanced box sizing on narrow displays */
+        height: 75vw;       /* Forces perfect 1:1 shape proportions */
+        left: 50% !important;
+        top: 45% !important;
+        transform: translate3d(-50%, -50%, 0) scale(0.9) !important;
     }
     
     .carousel-card.active {
+        opacity: 1;
         transform: translate3d(-50%, -50%, 0) scale(1) !important;
     }
     
     .carousel-card.next {
-        opacity: 0;           
+        opacity: 0 !important;           
         transform: translate3d(-50%, -50%, 0) scale(0.85) !important;
     }
     
     .card-meta {
         position: absolute;
-        bottom: -75px;        
-        left: 0;
-        width: 100%;          
-        text-align: center;
+        bottom: -95px;       /* Safely moves text out below the bottom crop of the image */
+        left: 0 !important;  /* Overrides the -40px offset pulling text off-screen */
+        right: 0 !important; /* Establishes text boundaries from side to side */
+        width: 100% !important;
+        text-align: center;  /* Centers typography elements */
+        padding: 0 15px;   
+    }
+    .collection-tag {
+        font-size: 0.6rem;
+        letter-spacing: 0.3em;
+        margin-bottom: 6px;
     }
 
     .item-title {
-        font-size: 1.1rem;
-        letter-spacing: 0.25em;
+        font-size: 1.1rem;   /* Moderates font sizing so terms like BOUTIQUE don't wrap or clip */
+        letter-spacing: 0.22em;
+        line-height: 1.2;
+        width: 100%;
+        display: block;
     }
 
     .carousel-controls {
-        position: relative;
-        bottom: auto;
-        right: auto;
-        margin-top: 110px;    
-        justify-content: center;
+        position: absolute;
+        bottom: 25px;       /* Grounds buttons directly at the baseline section */
+        right: 0 !important;
+        left: 0 !important;
+        margin: 0 auto;
+        justify-content: center; /* Centers navigation arrows horizontally */
         width: 100%;
+        gap: 20px;
     }
 }
        
