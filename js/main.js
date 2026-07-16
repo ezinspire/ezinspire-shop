@@ -55,4 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    transitionCarousel(activeIndex);
 });
