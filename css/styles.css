@@ -145,8 +145,10 @@ body {
 
 .card-meta {
     position: absolute;
-    bottom: 35px;  /* Changed from a negative number to sit neatly INSIDE the visual card area */
-    left: 35px;    /* Changed from a negative number to avoid clipping past the left screen edge */
+    top: calc(100% + 20px); /* Places text cleanly underneath the image block */
+    left: 0;
+    width: 100%;
+    text-align: left;
     z-index: 30;
 }
 
@@ -170,7 +172,7 @@ body {
 
 .carousel-controls {
     position: absolute;
-    bottom: 60px;
+    bottom: 30px; /* Safely aligns the buttons below the text on laptop screens */
     right: 80px;
     display: flex;
     align-items: center;
@@ -214,10 +216,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Prevents unwanted side-to-side rubber-band scrolling on phones */
-    body {
-        overflow-x: hidden !important;
-    }
     .navigation-overlay {
         width: 75vw; 
     }
@@ -227,48 +225,43 @@ body {
         height: 50vh;   
     }
     
-    .carousel-card {
-        width: 75vw;          
-        height: 75vw; /* Generates a beautiful, balanced, high-end 1:1 luxury square layout */        
-        left: 50% !important; 
-        top: 45% !important; 
-        transform: translate3d(-50%, -50%, 0) scale(0.9) !important; 
+   .carousel-card {
+        width: 70vw;          
+        height: 45vh; /* Gives cards an elegant, undistorted rectangular portrait frame */
+        left: 15vw;
+        top: 0;
+        transform: translate3d(0, 0, 0) scale(0.95);
+        opacity: 0 !important;
+        transition: all 0.8s cubic-bezier(0.25, 1, 0.3, 1);
     }
     
     .carousel-card.active {
-        opacity: 1;
-        transform: translate3d(-50%, -50%, 0) scale(1) !important;
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0) scale(1);
     }
     
     .carousel-card.next {
-        opacity: 0 !important;           
-        transform: translate3d(-50%, -50%, 0) scale(0.85) !important;
+        opacity: 0 !important;
     }
     
     .card-meta {
-        position: absolute;
-        bottom: -90px; /* Positions the text block cleanly beneath the square image frame */       
-        left: 0 !important;   /* Wipes clean desktop offset shifts */
-        right: 0 !important;  
-        width: 100% !important;          
-        text-align: center;   
-    }
-    
-    .collection-tag {
-        color: #111111 !important;
+        top: calc(100% + 20px);
+        left: 0;
+        width: 100%;
+        text-align: center !important; /* Centers writing beautifully on mobile backdrops */
+        padding: 0 15px;
     }
 
     .item-title {
-        color: #111111 !important; /* Forces dark slate typography so long terms like BOUTIQUE don't vanish */
         font-size: 1.1rem;
         letter-spacing: 0.22em;
     }
 
-     .carousel-controls {
+    .carousel-controls {
         position: relative;
         bottom: auto;
         right: auto;
-        margin-top: 130px; /* Safely introduces a buffer zone below the collection title text */   
+        margin-top: 100px; /* Buffer room separating buttons from your text title */   
         justify-content: center;
         width: 100%;
     }
