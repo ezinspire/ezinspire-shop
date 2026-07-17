@@ -79,6 +79,7 @@ body {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column; /* Allows controls and cards to stack naturally without layout overlap */
     align-items: center;
     justify-content: center;
     z-index: 10;
@@ -87,11 +88,11 @@ body {
 .luxury-carousel {
     position: relative;
     width: 85vw;
-    height: 65vh;
+    height: 70vh; /* Increased slightly to create room for titles underneath images */
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .luxury-carousel .image-wrapper img {
@@ -103,8 +104,8 @@ body {
 
 .carousel-card {
     position: absolute;
-    width: 40vw;
-    height: 55vh;
+    width: 35vw; /* Slightly narrowed for elegant, magazine-style vertical aspect ratio */
+    height: 50vh;
     opacity: 0;
     transform: translate3d(15%, 5%, 0) scale(0.9);
     transition: all 1.2s cubic-bezier(0.25, 1, 0.3, 1);
@@ -113,14 +114,14 @@ body {
 
 .carousel-card.active {
     opacity: 1;
-    transform: translate3d(-10%, -5%, 0) scale(1);
+    transform: translate3d(0, -4vh, 0) scale(1); /* Centers active items perfectly in viewport */
     z-index: 20;
     pointer-events: auto;
 }
 
 .carousel-card.next {
-    opacity: 0.4;
-    transform: translate3d(20%, 5%, 0) scale(0.85);
+    opacity: 0.25;
+    transform: translate3d(25%, 2%, 0) scale(0.85);
     z-index: 10;
 }
 
@@ -145,35 +146,43 @@ body {
 
 .card-meta {
     position: absolute;
-    top: calc(100% + 20px); /* Places text cleanly underneath the image block */
+    top: calc(100% + 25px); /* Safely offsets descriptions below image base */
     left: 0;
     width: 100%;
     text-align: left;
     z-index: 30;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.3, 1) 0.3s;
+}
+
+.carousel-card.active .card-meta {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .collection-tag {
     display: block;
     font-size: 0.65rem;
     letter-spacing: 0.4em;
-    color: #FFFFFF; /* Changed to high-contrast white so it stands out cleanly on top of images */
-    margin-bottom: 10px;
+    color: #777777; /* Swapped white for editorial slate gray */
+    margin-bottom: 12px;
 }
 
 .item-title {
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     font-size: 1.35rem;
-    font-weight: 100;         
+    font-weight: 200;         
     letter-spacing: 0.38em;    
     line-height: 1.4;
-    color: #FFFFFF; /* Changed to high-contrast white to eliminate dark text overlap blind spots */
+    color: #111111; /* Swapped white for deep luxury charcoal */
     text-transform: uppercase;
 }
 
 .carousel-controls {
     position: absolute;
-    bottom: 30px; /* Safely aligns the buttons below the text on laptop screens */
-    right: 80px;
+    bottom: 5vh; /* Places indicators perfectly relative to screen base */
+    right: 7.5vw;
     display: flex;
     align-items: center;
     gap: 30px;
