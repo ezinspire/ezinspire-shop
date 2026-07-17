@@ -56,4 +56,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     transitionCarousel(activeIndex);
+        
+    const deckSlider = document.getElementById('product-deck');
+    const deckPrev = document.getElementById('deck-prev');
+    const deckNext = document.getElementById('deck-next');
+
+    if (deckSlider && deckPrev && deckNext) {
+        
+        const getScrollStep = () => deckSlider.clientWidth * 0.4;
+
+        deckNext.addEventListener('click', () => {
+            deckSlider.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+
+        deckPrev.addEventListener('click', () => {
+            deckSlider.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+    }
 });
