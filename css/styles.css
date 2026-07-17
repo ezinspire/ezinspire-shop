@@ -703,3 +703,152 @@ body {
     }
 }
 
+.boutique-deck-container {
+    position: relative;
+    width: 100vw;
+    padding: 140px 60px 40px 60px; /* Pads neatly directly below your fixed header */
+    background-color: transparent;
+    z-index: 40;
+}
+
+.deck-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    padding-bottom: 15px;
+}
+
+.deck-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    font-weight: 400;
+    color: #111111;
+}
+
+.deck-nav-arrows {
+    display: flex;
+    gap: 20px;
+}
+
+.deck-arrow-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #111111;
+    padding: 5px 10px;
+    transition: opacity 0.3s;
+}
+
+.deck-arrow-btn:hover {
+    opacity: 0.4;
+}
+
+.product-deck-slider {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.product-deck-slider::-webkit-scrollbar {
+    display: none;
+}
+.product-deck-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.product-deck-card {
+    flex: 0 0 22vw; /* Perfectly sizes 4 dynamic view frames visible on laptops */
+    display: flex;
+    flex-direction: column;
+}
+
+.deck-image-holder {
+    position: relative;
+    width: 100%;
+    height: 34vh;
+    overflow: hidden;
+    background-color: #FAFAFA;
+}
+
+.deck-image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.deck-buy-trigger {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    padding: 18px 0;
+    font-weight: 400;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.product-deck-card:hover .deck-image-holder img {
+    transform: scale(1.03);
+}
+
+.product-deck-card:hover .deck-buy-trigger {
+    transform: translateY(0);
+}
+
+.deck-card-info {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.deck-item-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    font-weight: 300;
+    color: #111111;
+}
+
+.deck-item-price {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: #777777;
+}
+
+@media (max-width: 768px) {
+    .boutique-deck-container {
+        padding: 120px 25px 20px 25px;
+    }
+    
+    .product-deck-card {
+        flex: 0 0 65vw; /* Sets beautiful portrait panels perfect for side-swiping on touch devices */
+    }
+    
+    .deck-image-holder {
+        height: 38vh;
+    }
+
+    .deck-buy-trigger {
+        transform: translateY(0);
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 12px 0;
+    }
+}
+
