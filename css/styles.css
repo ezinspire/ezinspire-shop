@@ -214,14 +214,16 @@ body {
 .navigation-overlay {
     position: fixed;
     top: 0;
-    right: 0;             /* ← Aligns the panel to the right edge of the window */
-    width: 30vw;          /* ← Thins the container down to exactly 30% of screen width */
+    right: 0;             
+    width: 30vw;          
     height: 100vh;
     z-index: 90;
     pointer-events: none;
-    display: none;        
+    display: flex;         /* Changed from none to flex so structure stays rendered */
+    visibility: hidden;    /* Use visibility instead of display to allow CSS transitions */
     align-items: center;
-    padding-left: 55px;   /* ← Balanced left padding inside the column */
+    padding-left: 55px;   
+    transition: visibility 0.8s;
 }
 
 @media (max-width: 768px) {
@@ -283,6 +285,24 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.97); /* Matches your White background */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.navigation-overlay.menu-open {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.overlay-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.97); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     opacity: 0;
@@ -713,42 +733,38 @@ body {
 }
 
 .boutique-deck-container {
-    position: relative;
     width: 100vw;
-    padding: 140px 60px 40px 60px; /* Pads neatly directly below your fixed header */
-    background-color: transparent;
-    z-index: 40;
+    padding: 60px;
+    background-color: #FFFFFF;
+    position: relative;
+    z-index: 12;
 }
 
 .deck-header-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    margin-bottom: 25px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    padding-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 .deck-tag {
     font-size: 0.65rem;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.3em;
     font-weight: 400;
-    color: #111111;
 }
 
 .deck-nav-arrows {
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
 
 .deck-arrow-btn {
     background: none;
     border: none;
-    font-size: 1.1rem;
     cursor: pointer;
-    color: #111111;
+    font-size: 1rem;
     padding: 5px 10px;
+    color: #000000;
     transition: opacity 0.3s;
 }
 
@@ -759,14 +775,15 @@ body {
 .product-deck-slider {
     display: flex;
     gap: 30px;
-    overflow-x: auto;
+    overflow-x: auto;          /* Enables native kinetic touch scrolling */
     scroll-behavior: smooth;
     width: 100%;
     padding-bottom: 20px;
+    scrollbar-width: none;
 }
 
 .product-deck-slider::-webkit-scrollbar {
-    display: none;
+    display: none;  
 }
 .product-deck-slider {
     -ms-overflow-style: none;
@@ -774,24 +791,25 @@ body {
 }
 
 .product-deck-card {
-    flex: 0 0 22vw; /* Perfectly sizes 4 dynamic view frames visible on laptops */
+    flex: 0 0 25vw;            /* Forces exactly 4 cards visible across viewport scale */
+    min-width: 280px;          /* Prevents compression on smaller screens */
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
 
 .deck-image-holder {
     position: relative;
     width: 100%;
-    height: 34vh;
+    height: 40vh;
     overflow: hidden;
-    background-color: #FAFAFA;
 }
 
 .deck-image-holder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 1s cubic-bezier(0.25, 1, 0.3, 1);
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.3, 1);
 }
 
 .deck-buy-trigger {
@@ -814,31 +832,29 @@ body {
 }
 
 .product-deck-card:hover .deck-image-holder img {
-    transform: scale(1.03);
+    transform: scale(1.06);
 }
 
 .product-deck-card:hover .deck-buy-trigger {
-    transform: translateY(0);
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
 }
 
 .deck-card-info {
-    margin-top: 15px;
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .deck-item-name {
     font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    font-weight: 300;
-    color: #111111;
+    letter-spacing: 0.15em;
+    font-weight: 400;
 }
 
 .deck-item-price {
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    color: #777777;
+    font-size: 0.7rem;
+    color: #666666;
 }
 
 @media (max-width: 768px) {
@@ -846,18 +862,27 @@ body {
         padding: 120px 25px 20px 25px;
     }
     
-    .product-deck-card {
-        flex: 0 0 65vw; /* Sets beautiful portrait panels perfect for side-swiping on touch devices */
+.product-deck-card {
+    flex: 0 0 65vw; /* Sets beautiful portrait panels perfect for side-swiping on touch devices */
     }
     
-    .deck-image-holder {
-        height: 38vh;
+.deck-image-holder {
+    height: 38vh;
     }
 
-    .deck-buy-trigger {
-        transform: translateY(0);
-        background-color: rgba(255, 255, 255, 0.85);
-        padding: 12px 0;
+.deck-buy-trigger {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate3d(-50%, 10px, 0);
+    background-color: #FFFFFF;
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    padding: 12px 25px;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
     }
 }
 
