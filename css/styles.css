@@ -886,3 +886,125 @@ body {
     }
 }
 
+.infinite-shelf-section {
+    padding: 8rem 60px;
+    background-color: #FFFFFF; /* Matches your luxury white theme */
+    width: 100%;
+}
+
+.shelf-header {
+    margin-bottom: 4rem;
+    text-align: left;
+}
+
+.shelf-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    color: #777777;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.shelf-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #111111;
+}
+
+.two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    row-gap: 80px;
+    width: 100%;
+}
+
+.shelf-product-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.shelf-img-holder {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background-color: #F4F4F4;
+    margin-bottom: 20px;
+}
+
+.shelf-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.shelf-basket-trigger {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: none;
+    color: #111111;
+    padding: 20px 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.3, 1), opacity 0.5s linear;
+}
+
+.shelf-product-card:hover .shelf-img-holder img {
+    transform: scale(1.03);
+}
+
+.shelf-product-card:hover .shelf-basket-trigger {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.shelf-card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0 5px;
+}
+
+.shelf-item-name {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+.shelf-item-price {
+    font-size: 0.75rem;
+    color: #777777;
+    font-weight: 300;
+}
+
+@media (max-width: 768px) {
+    .infinite-shelf-section {
+        padding: 4rem 20px;
+    }
+    .two-column-grid {
+        grid-template-columns: 1fr; /* Drops elegantly to 1 product per line on small screens */
+        row-gap: 50px;
+    }
+    .shelf-basket-trigger {
+        opacity: 1;
+        transform: translateY(0);
+        padding: 15px 0;
+        background-color: rgba(255, 255, 255, 0.85);
+    }
+}
