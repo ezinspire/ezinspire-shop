@@ -994,17 +994,26 @@ body {
 }
 
 @media (max-width: 768px) {
-    .infinite-shelf-section {
-        padding: 4rem 20px;
-    }
     .two-column-grid {
-        grid-template-columns: 1fr; /* Drops elegantly to 1 product per line on small screens */
-        row-gap: 50px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        column-gap: 15px !important;
+        row-gap: 35px !important;
+    }
+    .shelf-item-name {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.1em !important;
+    }
+    .shelf-item-price {
+        font-size: 0.65rem !important;
+    }
+    .shelf-img-holder {
+        margin-bottom: 10px !important;
     }
     .shelf-basket-trigger {
-        opacity: 1;
-        transform: translateY(0);
-        padding: 15px 0;
-        background-color: rgba(255, 255, 255, 0.85);
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        padding: 12px 0 !important;
+        font-size: 0.6rem !important;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 }
