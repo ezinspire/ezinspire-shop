@@ -1126,3 +1126,149 @@ body {
         text-align: center;
     }
 }
+
+.shelf-img-holder {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Keeps a consistent, pristine fashion frame ratio */
+    overflow: hidden;
+    background-color: transparent !important; /* Removes background grey placeholder bleed */
+}
+
+.shelf-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important; /* Crops images beautifully without squishing or stretching */
+    object-position: center;
+}
+
+.shelf-embedded-price {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: #111111;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    padding: 6px 12px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.centred-editorial-meta {
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 15px 0 0 0 !important;
+}
+
+.shelf-item-name {
+    width: 100%;
+    text-align: center;
+}
+
+.shelf-basket-trigger {
+    text-align: center;
+    left: 50% !important;
+    transform: translate3d(-50%, 100%, 0) !important;
+    width: 100%;
+}
+
+.shelf-product-card:hover .shelf-basket-trigger {
+    transform: translate3d(-50%, 0, 0) !important;
+}
+
+.bottom-directory-section {
+    position: fixed;
+    bottom: 60px; /* Suspended precisely above the footer bar */
+    left: 0;
+    width: 100vw;
+    padding: 20px 60px;
+    background: rgba(255, 255, 255, 0.65) !important; /* High-end transparent glass backdrop */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 90; /* Glides over the scrolling products smoothly */
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.luxury-site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    padding: 15px 60px;
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 91; /* Sits at the highest depth tier layer */
+}
+
+.infinite-shelf-section {
+    padding-bottom: 250px !important;
+}
+
+@media (max-width: 768px) {
+    .shelf-img-holder {
+        aspect-ratio: 1 / 1.35 !important; /* Custom tailored mobile format dimension frame */
+    }
+    
+    .shelf-embedded-price {
+        font-size: 0.6rem !important;
+        padding: 4px 8px !important;
+        top: 10px;
+        right: 10px;
+    }
+
+    .shelf-basket-trigger {
+        transform: translate3d(-50%, 0, 0) !important; /* Kept fully visible on mobile frames */
+        padding: 10px 0 !important;
+    }
+
+    .bottom-directory-section {
+        bottom: 50px;
+        padding: 15px 20px !important;
+    }
+
+    .directory-container {
+        flex-direction: row !important; /* Keeps branding and directory side-by-side horizontally */
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+
+    .directory-logo {
+        font-size: 1.1rem !important;
+    }
+
+    .directory-title {
+        display: none; /* Safely hides the title tag to save vertical overlay screen room */
+    }
+
+    .directory-list {
+        flex-direction: row !important; /* Converts column lists into a sleek horizontal row menu */
+        gap: 15px;
+    }
+
+    .directory-list a {
+        font-size: 0.65rem !important;
+    }
+
+    .luxury-site-footer {
+        padding: 15px 20px !important;
+    }
+
+    .footer-inner-content {
+        flex-direction: row !important; /* Horizontally balances the credit text lines on mobile screens */
+        justify-content: space-between;
+        font-size: 0.55rem;
+    }
+    
+    .infinite-shelf-section {
+        padding-bottom: 180px !important;
+    }
+}
+
