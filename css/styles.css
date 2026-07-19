@@ -1017,3 +1017,112 @@ body {
         background-color: rgba(255, 255, 255, 0.9);
     }
 }
+
+.bottom-directory-section {
+    background-color: #FFFFFF;
+    padding: 6rem 60px;
+    border-top: 1px solid #EEEEEE;
+    position: relative;
+    z-index: 10;
+}
+
+.directory-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+}
+
+.directory-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    color: #111111;
+    margin-bottom: 5px;
+}
+
+.directory-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: #888888;
+    display: block;
+}
+
+.directory-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    color: #111111;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.directory-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.directory-list a {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: #666666;
+    transition: color 0.3s ease;
+}
+
+.directory-list a:hover {
+    color: #000000;
+}
+
+.luxury-site-footer {
+    background-color: #FFFFFF;
+    padding: 30px 60px;
+    border-top: 1px solid #F5F5F5;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-inner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy, .footer-legal-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: #999999;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-legal-links a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #111111;
+}
+
+@media (max-width: 768px) {
+    .bottom-directory-section {
+        padding: 4rem 20px;
+    }
+    .directory-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .luxury-site-footer {
+        padding: 25px 20px;
+    }
+    .footer-inner-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
