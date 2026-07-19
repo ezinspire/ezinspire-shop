@@ -92,20 +92,20 @@ function initVerticalInfiniteShelf() {
         { name: "RELAXED TAILORED TROUSER", price: "£360.00", img: "product-4.jpg" }
     ];
 
-    function createProductCardMarkup(product) {
-        return `
-            <div class="shelf-product-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
-                <div class="shelf-img-holder">
-                    <img src="${product.img}" alt="${product.name}">
-                    <button class="shelf-basket-trigger">ADD TO BASKET</button>
-                </div>
-                <div class="shelf-card-info">
-                    <h3 class="shelf-item-name">${product.name}</h3>
-                    <span class="shelf-item-price">${product.price}</span>
-                </div>
+  function createProductCardMarkup(product) {
+    return `
+        <div class="shelf-product-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+            <div class="shelf-img-holder">
+                <img src="${product.img}" alt="${product.name}">
+                <span class="shelf-embedded-price">${product.price}</span>
+                <button class="shelf-basket-trigger">ADD TO BASKET</button>
             </div>
-        `;
-    }
+            <div class="shelf-card-info centred-editorial-meta">
+                <h3 class="shelf-item-name">${product.name}</h3>
+            </div>
+        </div>
+    `;
+}
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -131,4 +131,3 @@ function initVerticalInfiniteShelf() {
 
     observer.observe(sentinel);
 }
-
