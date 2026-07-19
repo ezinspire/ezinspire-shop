@@ -74,3 +74,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    initVerticalInfiniteShelf();
+});
+
+function initVerticalInfiniteShelf() {
+    const grid = document.getElementById('infinite-shelf-grid');
+    const sentinel = document.getElementById('infinite-shelf-sentinel');
+    
+    if (!grid || !sentinel) return;
+
+    const mockProductDatabase = [
+        { name: "ASYMMETRIC SILK CAMISOLE", price: "£210.00", img: "product-1.jpg" },
+        { name: "OVERSIZED LINEN SHIRT", price: "£280.00", img: "product-2.jpg" },
+        { name: "MINIMALIST LEATHER BELT", price: "£140.00", img: "product-3.jpg" },
+        { name: "RELAXED TAILORED TROUSER", price: "£360.00", img: "product-4.jpg" }
+    ];
+
+    function createProductCardMarkup(product) {
+        return `
+            <div class="shelf-product-card" style="opacity: 0; transform: translateY(20px); transition: all 0.8s ease;">
+                <div class="shelf-img-holder">
+                    <img src="${product.img}" alt="${product.name}">
+                    <button class="shelf-basket-trigger">ADD TO BASKET</button>
+                </div>
+                <div class="shelf-card-info">
+                    <h3 class="shelf-item-name">${product.name}</h3>
+                    <span class="shelf-item-price">${product.price}</span>
+                </div>
+            </div>
+        `;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                
+                mockProductDatabase.forEach((product) => {
+                    const tempWrapper = document.createElement('div');
+                    tempWrapper.innerHTML = createProductCardMarkup(product);
+                    const newCard = tempWrapper.firstElementChild;
+                    
+                    grid.appendChild(newCard);
+                    
+                    setTimeout(() => {
+                        newCard.style.opacity = "1";
+                        newCard.style.transform = "translateY(0)";
+                    }, 50);
+                });
+            }
+        });
+    }, {
+        rootMargin: "0px 0px 300px 0px" // Triggers load 300px before the user reaches the bottom
+    });
+
+    observer.observe(sentinel);
+}
+
