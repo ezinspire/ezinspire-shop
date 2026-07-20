@@ -1570,7 +1570,6 @@ body {
 .bottom-directory-section {
     position: relative !important;
     background: #FFFFFF !important;
-    /* Wide dramatic padding spacing to let the design breathe */
     padding: 10rem 40px 14rem 40px !important; 
     width: 100% !important;
     z-index: 10;
@@ -1704,6 +1703,173 @@ body {
     .luxury-dir-link {
         font-size: 0.7rem !important;
         letter-spacing: 0.2em !important;
+    }
+}
+
+.bottom-directory-section {
+    position: relative !important;
+    background-color: #FFFFFF !important;
+    /* Dramatic, expansive luxury padding allows elements to breathe */
+    padding: 12rem 40px 15rem 40px !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10;
+}
+
+.luxury-editorial-frame {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.editorial-branding-tier {
+    margin-bottom: 35px;
+    width: 100%;
+}
+
+.editorial-brand-title {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 2.8rem !important; /* Commanding, elegant layout size scale */
+    font-weight: 300 !important;
+    letter-spacing: 0.35em !important; /* Broad architectural letter tracking */
+    color: #111111;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-indent: 0.35em; /* Compensates letter tracking to center elements perfectly */
+}
+
+.editorial-brand-tagline {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.65rem !important; /* Pin-sharp modern minimal typography scaling */
+    letter-spacing: 0.5em !important; /* Advanced tracking expansion */
+    color: #86868b !important;
+    text-transform: uppercase;
+    margin-top: 14px;
+    text-indent: 0.5em;
+    font-weight: 400;
+}
+
+.editorial-hairline-accent {
+    width: 1px;
+    height: 60px; /* High-end vertical axis layout structure divider */
+    background-color: #111111;
+    opacity: 0.15;
+    margin: 20px 0 45px 0;
+    transition: height 0.6s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.bottom-directory-section:hover .editorial-hairline-accent {
+    height: 90px; /* Interactive kinetic expansion depth animation on user hover */
+}
+
+.editorial-links-tier {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.editorial-directory-heading {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.4em !important;
+    color: #111111 !important;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    text-indent: 0.4em;
+    opacity: 0.8;
+}
+
+.editorial-luxury-nav-list {
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 55px !important; /* Balanced layout spacing width markers */
+    padding: 0;
+    margin: 0;
+}
+
+.editorial-nav-item {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.7rem !important; /* Quiet luxury text sizing parameters */
+    font-weight: 400 !important;
+    letter-spacing: 0.22em !important;
+    color: #555555 !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    position: relative;
+    padding-bottom: 8px;
+    transition: color 0.3s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.editorial-nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #111111;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.3, 1), transform 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+    transform: translateX(-50%);
+    opacity: 0.7;
+}
+
+.editorial-nav-item:hover {
+    color: #000000 !important;
+}
+
+.editorial-nav-item:hover::after {
+    width: 80%; /* Expands gracefully on interactive hover states */
+}
+
+@media (max-width: 768px) {
+    .bottom-directory-section {
+        padding: 7rem 20px 12rem 20px !important;
+    }
+
+    .editorial-brand-title {
+        font-size: 2rem !important; /* Downscales dynamically for clear smartphone display bounds */
+        letter-spacing: 0.25em !important;
+        text-indent: 0.25em;
+    }
+
+    .editorial-brand-tagline {
+        font-size: 0.55rem !important;
+        letter-spacing: 0.35em !important;
+        text-indent: 0.35em;
+    }
+
+    .editorial-hairline-accent {
+        height: 45px;
+        margin: 15px 0 35px 0;
+    }
+
+    .bottom-directory-section:hover .editorial-hairline-accent {
+        height: 65px;
+    }
+
+    .editorial-directory-heading {
+        margin-bottom: 25px;
+    }
+
+    .editorial-luxury-nav-list {
+        flex-direction: column !important;
+        gap: 22px !important;
+    }
+
+    .editorial-nav-item {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.18em !important;
     }
 }
 
