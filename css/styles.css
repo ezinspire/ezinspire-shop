@@ -1567,3 +1567,143 @@ body {
     }
 }
 
+.bottom-directory-section {
+    position: relative !important;
+    background: #FFFFFF !important;
+    /* Wide dramatic padding spacing to let the design breathe */
+    padding: 10rem 40px 14rem 40px !important; 
+    width: 100% !important;
+    z-index: 10;
+}
+
+.directory-luxury-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.editorial-divider-line {
+    width: 60px;
+    height: 1px;
+    background-color: #111111;
+    opacity: 0.15;
+    margin: 35px 0;
+    transition: width 0.8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.bottom-directory-section:hover .editorial-divider-line {
+    width: 120px; /* Fluid expandable length detailing on hover */
+}
+
+.directory-center-branding {
+    margin-bottom: 20px;
+}
+
+.directory-luxury-logo {
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 1.6rem !important; /* Scaled down significantly for a quiet luxury feel */
+    font-weight: 300 !important;
+    letter-spacing: 0.45em !important; /* Widened tracking dramatically */
+    color: #111111;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-indent: 0.45em; /* Perfectly centers characters despite heavy tracking letter-spacing values */
+}
+
+.directory-luxury-sub {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.55rem !important; /* Pin-sharp, tiny caption layout lettering */
+    letter-spacing: 0.5em !important;
+    color: #86868b !important;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 8px;
+    text-indent: 0.5em;
+}
+
+.directory-links-shelf {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.directory-luxury-list {
+    list-style: none !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 50px !important; /* Spacious link gaps */
+    padding: 0;
+    margin: 0;
+}
+
+.luxury-dir-link {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.65rem !important; /* Clean, minimal magazine index scale */
+    font-weight: 400 !important;
+    letter-spacing: 0.25em !important;
+    color: #555555 !important;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    position: relative;
+    padding-bottom: 6px;
+    transition: color 0.4s ease;
+}
+
+.luxury-dir-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: #111111;
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.3, 1), transform 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+    transform: translateX(-50%);
+    opacity: 0.8;
+}
+
+.luxury-dir-link:hover {
+    color: #000000 !important;
+}
+
+.luxury-dir-link:hover::after {
+    width: 70%; /* Underline gracefully expands outward from center balance points */
+}
+
+.luxury-site-footer {
+    background: rgba(255, 255, 255, 0.8) !important; /* Enhanced glass alpha blur values */
+    border-top: 1px solid rgba(0, 0, 0, 0.03) !important;
+}
+
+@media (max-width: 768px) {
+    .bottom-directory-section {
+        padding: 6rem 20px 10rem 20px !important; /* Tailored compression gaps for short touch frames */
+    }
+
+    .directory-luxury-logo {
+        font-size: 1.35rem !important;
+        letter-spacing: 0.35em !important;
+    }
+
+    .directory-luxury-sub {
+        font-size: 0.5rem !important;
+        letter-spacing: 0.4em !important;
+    }
+
+    .directory-luxury-list {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .luxury-dir-link {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.2em !important;
+    }
+}
+
