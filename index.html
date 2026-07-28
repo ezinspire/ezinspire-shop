@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EZINSPIRE | High-End Apothecary & Fragrance House</title>
+    <!-- Typeface Integration -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+    <!-- Link to external Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button class="sensory-audio-node" id="audioWidget" aria-label="Toggle sensory environment audio background">
+        <span class="audio-status-txt">Sensory Mode / Off</span>
+        <div class="audio-wave-bars">
+            <div class="wave-line"></div>
+            <div class="wave-line"></div>
+            <div class="wave-line"></div>
+        </div>
+    </button>
+
+    <header>
+        <a href="#" class="brand-logo">EZINSPIRE</a>
+        <nav>
+            <ul>
+                <li><a href="#apothecary-vault">01 Apothecary</a></li>
+                <li><a href="#fragrance-vault">02 Fragrances</a></li>
+                <li><a href="#atelier-canvas">03 The Canvas</a></li>
+            </ul>
+        </nav>
+        <div class="cart-status">Bag (<span id="cartCount">0</span>)</div>
+    </header>
+
+    <main>
+      
+        <section class="cinematic-hero">
+            <div class="dream-ambient-bg"></div>
+            <div class="hero-inner-txt">
+                <span class="geo-compliance-tag">Exclusive Flagship Dispatch Node: UK & IE Only</span>
+                <h1>Hypnotic Minerals.<br>Dreamlike Chemistry.</h1>
+                <p>An immersive gateway showcasing rare botanical extracts sourced responsibly via Faire and select FM World fragrance libraries.</p>
+                <button class="luxury-explore-btn" id="exploreBtn">Enter Exhibition</button>
+            </div>
+        </section>
+
+        <section class="exhibition-wrap" id="apothecary-vault">
+            <div class="exhibition-intro">
+                <h2>The Curated Elements</h2>
+                <p>N°01 / Limited Master Batches Available</p>
+            </div>
+
+            <div class="asymmetric-exhibition-grid">
+                <!-- Product 1: Faire Shilajit Infusion -->
+                <article class="exhibition-card">
+                    <div class="frame-visual-container">
+                        <span class="origin-stamp">Faire Source</span>
+                        <img src="https://unsplash.com" alt="Rich fluid texture close up">
+                    </div>
+                    <div class="frame-details">
+                        <span class="category-sub">Alchemical Lip Care</span>
+                        <h3>Shilajit High-Gloss Resin Elixir</h3>
+                        <span class="price-tag">£45.00</span>
+                        <button class="purchase-action-btn add-to-cart-trigger">Acquire Item</button>
+                    </div>
+                </article>
+
+                <article class="exhibition-card" id="fragrance-vault">
+                    <div class="frame-visual-container">
+                        <span class="origin-stamp">FM World Perfume</span>
+                        <img src="https://unsplash.com" alt="Luxury perfume shadow profile">
+                    </div>
+                    <div class="frame-details">
+                        <span class="category-sub">Pure Parfum Concentré</span>
+                        <h3>Oud & Ash Infusion N°910</h3>
+                        <span class="price-tag">£62.00</span>
+                        <!-- Geo-fence notification triggers instantly on button hover via style controls -->
+                        <button class="purchase-action-btn uk-ie-shipping-lock add-to-cart-trigger">Acquire Item</button>
+                    </div>
+                </article>
+
+                <article class="exhibition-card">
+                    <div class="frame-visual-container">
+                        <span class="origin-stamp">Faire Source</span>
+                        <img src="https://unsplash.com" alt="Minimal beauty cream vessel profile">
+                    </div>
+                    <div class="frame-details">
+                        <span class="category-sub">Complexion Hydration</span>
+                        <h3>Raw Alpine Botanical Face Compound</h3>
+                        <span class="price-tag">£80.00</span>
+                        <button class="purchase-action-btn add-to-cart-trigger">Acquire Item</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="dreamy-scroller-canvas" id="atelier-canvas">
+            <div class="canvas-horizontal-viewport">
+                <div class="canvas-text-panel">
+                    <span>The Canvas / Movement One</span>
+                    <h3>Sourced Slowly. Hand Picked.</h3>
+                    <p>We deliberately bypass the standard, high-speed wholesale loop. Utilizing Faire’s boutique independent networks, we identify creators blending alternative mineral therapies directly into traditional cosmetic layers.</p>
+                </div>
+                <div class="canvas-media-panel">
+                    <img src="https://unsplash.com" alt="Ethereal sunbeams filtration through organic canopy">
+                </div>
+                <div class="canvas-text-panel">
+                    <span>The Canvas / Movement Two</span>
+                    <h3>The FM Pure Parfum Boundary Directive</h3>
+                    <p>Our choice to showcase FM World’s pure scent profiles demands logistical isolation. Because volatile oil extractions require dedicated ground freight paths, our distribution node limits checkouts specifically to UK and Ireland addresses.</p>
+                </div>
+                <div class="canvas-media-panel">
+                    <img src="https://unsplash.com" alt="Premium luxury dark cosmetics packaging silhouette">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid-container">
+            <div class="footer-column">
+                <h4>Exhibitions</h4>
+                <ul>
+                    <li><a href="#">The Organic Apothecary</a></li>
+                    <li><a href="#">FM Fragrance Catalogues</a></li>
+                    <li><a href="#">Small-Batch Sourcing Log</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Compliance & Nodes</h4>
+                <ul>
+                    <li><a href="#">United Kingdom Freight Rules</a></li>
+                    <li><a href="#">Ireland Maritime Distribution</a></li>
+                    <li><a href="#">Ingredient Testing Standards</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Atelier Support</h4>
+                <ul>
+                    <li><a href="#">Track Allocation Batch</a></li>
+                    <li><a href="#">Secure Checkout Parameters</a></li>
+                    <li><a href="#">Private Consultations</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>The Manifesto</h4>
+                <p>EZINSPIRE breaks traditional e-commerce paradigms. This space serves as an ambient exhibition room for exquisite physical wellness art pieces.</p>
+            </div>
+        </div>
+        <div class="footer-signature-block">
+            <div>&copy; 2026 EZINSPIRE Flagship Studio. All Rights Reserved. Sourced globally via Faire & FM World.</div>
+            <div class="footer-routing-badge">UK & IE MAILING NETWORK</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
