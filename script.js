@@ -1,58 +1,65 @@
 ```javascript
 document.addEventListener("DOMContentLoaded", () => {
-    
-    const exploreBtn = document.getElementById("exploreBtn");
-    if (exploreBtn) {
-        exploreBtn.addEventListener("click", () => {
-            const vaultSection = document.getElementById("apothecary-vault");
-            if (vaultSection) {
-                vaultSection.scrollIntoView({ behavior: "smooth" });
-            }
+
+    const trigger = document.getElementById("scrollTrigger");
+    if(trigger) {
+        trigger.addEventListener("click", () => {
+            document.getElementById("exhibition").scrollIntoView({ behavior: "smooth" });
         });
     }
 
-    let bagCount = 0;
-    const cartDisplay = document.getElementById("cartCount");
-    const purchaseButtons = document.querySelectorAll(".add-to-cart-trigger");
+    const slides = document.querySelectorAll(".carousel-slide");
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    let activeIndex = 0;
 
-    purchaseButtons.forEach(button => {
-        button.addEventListener("click", () => {
-            bagCount++;
-            if (cartDisplay) {
-                cartDisplay.innerText = bagCount;
-                // Elegant visual flash confirmation cue
-                cartDisplay.style.color = "#d4af37";
-                setTimeout(() => {
-                    cartDisplay.style.color = "#f9f9fb";
-                }, 400);
+    function updateCarousel(targetIndex) {
+        slides[activeIndex].classList.remove("active");
+        
+        if(targetIndex >= slides.length) {
+            activeIndex = 0;
+        } else if (targetIndex < 0) {
+            activeIndex = slides.length - 1;
+        } else {
+            activeIndex = targetIndex;
+        }
+        
+        slides[activeIndex].classList.add("active");
+    }
+
+    if(nextBtn && prevBtn) {
+        nextBtn.addEventListener("click", () => updateCarousel(activeIndex + 1));
+        prevBtn.addEventListener("click", () => updateCarousel(activeIndex - 1));
+    }
+
+    setInterval(() => {
+        updateCarousel(activeIndex + 1);
+    }, 7000);
+
+    let itemCounter = 0;
+    const countDisplay = document.getElementById("bagCount");
+    const bagTriggers = document.querySelectorAll(".bag-action-trigger");
+
+    bagTriggers.forEach(btn => {
+        btn.addEventListener("click", () => {
+            itemCounter++;
+            if(countDisplay) {
+                countDisplay.innerText = itemCounter;
+                countDisplay.style.color = "#bfae96";
+                setTimeout(() => { countDisplay.style.color = "#f4f3f0"; }, 400);
             }
         });
     });
 
-    let soundscapeActive = false;
-    const audioWidget = document.getElementById("audioWidget");
-    const labelText = document.querySelector(".audio-status-txt");
-    const waveLines = document.querySelectorAll(".wave-line");
+    let soundState = true;
+    const audioBtn = document.getElementById("audioBtn");
+    const audioTxt = document.querySelector(".audio-label-text");
 
-    if (audioWidget) {
-        audioWidget.addEventListener("click", () => {
-            soundscapeActive = !soundscapeActive;
-            
-            if (soundscapeActive) {
-                labelText.innerText = "Sensory Mode / Active";
-                labelText.style.color = "#d4af37";
-                
-                waveLines[0].style.transform = "scaleY(1.8)";
-                waveLines[1].style.transform = "scaleY(0.4)";
-                waveLines[2].style.transform = "scaleY(1.3)";
-            } else {
-                labelText.innerText = "Sensory Mode / Off";
-                labelText.style.color = "#86868b";
-                
-                waveLines.forEach(line => {
-                    line.style.transform = "scaleY(1)";
-                });
-            }
+    if(audioBtn) {
+        audioBtn.addEventListener("click", () => {
+            soundState = !soundState;
+            audioTxt.innerText = soundState ? "Mute Ambient Vibe" : "Play Ambient Vibe";
+            audioTxt.style.color = soundState ? "#f4f3f0" : "#8c8b88";
         });
     }
 });
