@@ -3,45 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZINSPIRE | L'Atelier Haute Beauté</title>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <title>EZINSPIRE | L'Atelier Haute Cosmétique</title>
+    
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cosmetic-grain-canvas"></div>
+
+    <div class="liquid-silver-glow"></div>
+    <div class="crystal-grid-lines"></div>
+
     <header id="mainHeader">
+        <div class="header-left">
+            <button class="luxury-menu-trigger" id="menuToggle" aria-label="Open Menu">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </button>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#exhibition" class="nav-link">The Lookbook</a></li>
+                    <li><a href="#curations" class="nav-link">The Collection</a></li>
+                </ul>
+            </nav>
+        </div>
+        
         <a href="#" class="brand-logo">EZINSPIRE</a>
-        <nav class="luxury-megamenu">
-            <ul>
-                <li><a href="#lookbook">The Lookbook</a></li>
-                <li><a href="#skincare">Skincare Lab</a></li>
-                <li><a href="#fragrance">Haute Perfumery</a></li>
-            </ul>
-        </nav>
+        
+        <div class="header-right">
+            <div class="cart-indicator-wrap" id="cartTrigger">
+                <span class="bag-txt">Maison Bag</span>
+                <div class="bag-counter-node">(<span id="bagCount">0</span>)</div>
+            </div>
+        </div>
     </header>
-    <main>
-        <section class="theatre-hero-section">
-            <div class="hero-editorial-grid">
-                <div class="hero-text-block">
-                    <h1 class="cinematic-headline">Liquid Luxury.<br><span class="editorial-italic">Sensory Intimacy.</span></h1>
-                    <p class="hero-narrative-paragraph">Advanced cellular biotechnology meets architectural fragrance design.</p>
+
+    <div class="silk-drawer-overlay" id="navDrawer">
+        <div class="drawer-content">
+            <button class="drawer-close" id="drawerClose">&times;</button>
+            <div class="drawer-grid">
+                <div class="drawer-links">
+                    <span class="drawer-label">Navigation</span>
+                    <a href="#exhibition" class="drawer-item-link">01 / The Lookbook</a>
+                    <a href="#curations" class="drawer-item-link">02 / Clinical Skincare Lab</a>
+                    <a href="#curations" class="drawer-item-link">03 / Haute Perfumery</a>
                 </div>
-                <div class="hero-visual-block scroll-reveal">
-                    <img src="https://unsplash.com" alt="Luxury Visual">
+                <div class="drawer-meta">
+                    <span class="drawer-label">Maison Location</span>
+                    <p>EZINSPIRE Flagship Laboratory<br>UK & IE Distribution Houses</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+       
+        <section class="cinematic-stage">
+            <div class="stage-frame-container">
+                <div class="stage-parallax-image" id="heroBg"></div>
+                <div class="stage-glass-shimmer"></div>
+                <div class="stage-content-card">
+                    <span class="curator-badge">Clinical Breakthrough Architecture</span>
+                    <h1 class="fade-up-lux">Liquid Luxury.<br><span class="italic-serif">Sensory Intimacy.</span></h1>
+                    <p class="fade-up-lux delay-1">Biotechnology encapsulated within heavy stained-white glass, sealed with monolithic crystal and pure metallic silver closures.</p>
+                    <div class="fade-up-lux delay-2">
+                        <button class="stage-action-btn" id="exploreBtn">
+                            <span>Explore The Vault</span>
+                            <div class="action-line"></div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="collection-canvas-grid" id="skincare">
-            <div class="editorial-asymmetric-products-web">
-                <article class="artifact-display-node scroll-reveal">
-                    <img src="https://unsplash.com" alt="Product">
-                    <h3>Resurfacing Peel Shot</h3>
-                    <p>£75.00</p>
-                    <button>Acquire Specimen</button>
+
+        <section class="runway-marquee" id="exhibition">
+            <div class="runway-track">
+                <span>STAINED WHITE GLASS CORE • SILVER METALLIC CLOSURES • MOLECULAR SKIN RESURFACING • </span>
+                <span>STAINED WHITE GLASS CORE • SILVER METALLIC CLOSURES • MOLECULAR SKIN RESURFACING • </span>
+            </div>
+        </section>
+
+        <section class="product-canvas" id="curations">
+            <div class="canvas-editorial-header scroll-reveal">
+                <span class="canvas-num">ALLOCATIONS 01 — 03</span>
+                <h2>The Curated Specimen Shells</h2>
+                <div class="silver-hairline-divider"></div>
+            </div>
+
+            <div class="asymmetric-editorial-web">
+                
+                <article class="artifact-node scroll-reveal">
+                    <div class="crystal-morph-frame">
+                        <img src="https://unsplash.com" alt="EZINSPIRE Resurfacing Peel Shot">
+                        <div class="glass-reflection-veil"></div>
+                        <span class="vessel-tag">Stained White Glass // Crystal Lid</span>
+                    </div>
+                    <div class="artifact-meta">
+                        <div class="meta-row">
+                            <h3>Resurfacing Peel Shot</h3>
+                            <span class="price-node">£75.00</span>
+                        </div>
+                        <p class="artifact-abstract">Cell-resurfacing bio-chemistry structured inside an opaque micro-vessel designed to filter active light rays.</p>
+                        <button class="acquire-action-trigger">
+                            <span class="txt-primary">Acquire Specimen</span>
+                            <span class="txt-hover">Secure Allocation</span>
+                        </button>
+                    </div>
                 </article>
+
+                <article class="artifact-node offset-node scroll-reveal">
+                    <div class="crystal-morph-frame">
+                        <img src="https://unsplash.com" alt="EZINSPIRE Stretch Mark Cream">
+                        <div class="glass-reflection-veil"></div>
+                        <span class="vessel-tag">Fluted Translucent Glass // Silver Lid</span>
+                    </div>
+                    <div class="artifact-meta">
+                        <div class="meta-row">
+                            <h3>Dermal Matrix Elastic Cream</h3>
+                            <span class="price-node">£90.00</span>
+                        </div>
+                        <p class="artifact-abstract">A high-density cell-matrix emulsion optimized to reconstruct collagen bonds over tissue stress areas.</p>
+                        <button class="acquire-action-trigger">
+                            <span class="txt-primary">Acquire Specimen</span>
+                            <span class="txt-hover">Secure Allocation</span>
+                        </button>
+                    </div>
+                </article>
+
+                <article class="artifact-node scroll-reveal">
+                    <div class="crystal-morph-frame">
+                        <img src="https://unsplash.com" alt="EZINSPIRE Haute Perfumery">
+                        <div class="glass-reflection-veil"></div>
+                        <span class="vessel-tag">Heavy Monolithic Glass // Polished Silver Cap</span>
+                    </div>
+                    <div class="artifact-meta">
+                        <div class="meta-row">
+                            <h3>Oud & Ash Infusion N°910</h3>
+                            <span class="price-node">£145.00</span>
+                        </div>
+                        <p class="artifact-abstract">Smoky resin architecture suspended in heavy architectural glass to lock and age volatile raw vectors.</p>
+                        <button class="acquire-action-trigger">
+                            <span class="txt-primary">Acquire Specimen</span>
+                            <span class="txt-hover">Secure Allocation</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="editorial-manifesto-block">
+            <div class="manifesto-wrap scroll-reveal">
+                <span class="manifesto-header-badge">The Sanctuary Creed</span>
+                <blockquote class="manifesto-quote">
+                    "We do not build cosmetics. We formulate digital and physical expressionism, wrapping groundbreaking molecular biology inside solid architectural vessels."
+                </blockquote>
             </div>
         </section>
     </main>
-    <script src="script.js"></script>
-</body>
-</html>
+
+    <footer>
+        <div class="footer-layout-matrix">
+            
+                <h3>EZINSPIRE</h3>
+                <p>An innovative open-laboratory structure dedicated to high-fidelity skincare chemistry and visual spatial luxury layout structures.</p>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Allotments</h4>
+                <ul>
+                    <li><a href="#">The Organic Vault</a></li>
+                    <li><a href="#">Clinical Testing Dossier</a></li>
+                </ul>
+            </div>
+            <div class="footer-nav-col">
+                <h4>Logistics</h4>
+                <ul>
+                    <li><a href="#">UK Territorial Dispatch</a></li>
+                    <li><a href="#">Ireland Mainland Routes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-base-signature">
