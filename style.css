@@ -1,29 +1,387 @@
 :root {
-    --bg-pure: #ffffff;
-    --text-charcoal: #111111;
-    --transition-silky: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    --font-serif: 'Cormorant Garamond', serif;
+    --bg-base: #ffffff;
+    --bg-trans-clear: rgba(255, 255, 255, 0.02);
+    --bg-trans-lux: rgba(255, 255, 255, 0.75);
+    --text-deep: #111111;
+    --text-editorial: #2a2a2a;
+    --text-muted: #777777;
+    --text-whisper: #aaaaaa;
+    --accent-bronze: #8a7355;
+    --border-lux: rgba(0, 0, 0, 0.06);
+    --border-dark: #111111;
+    
+    --easing-silky: cubic-bezier(0.25, 1, 0.3, 1);
+    --duration-lux: 1.2s;
 }
 
-body { font-family: 'Montserrat', sans-serif; margin: 0; overflow-x: hidden; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-base);
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-deep);
+    background-color: var(--bg-base);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+}
+
+.ambient-glow {
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 50vh;
+    background: radial-gradient(circle, rgba(138, 115, 85, 0.03) 0%, rgba(255,255,255,0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glass-grain-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://w3.org Atemplate%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.015;
+    z-index: 999;
+    pointer-events: none;
+}
 
 header {
-    position: fixed; top: 0; width: 100%; height: 100px;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0 60px; transition: var(--transition-silky); z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    z-index: 1000;
+    border-bottom: 1px solid transparent;
+    background-color: rgba(255, 255, 255, 0);
+    
+    transition: height var(--duration-lux) var(--easing-silky), 
+                background-color var(--duration-lux) var(--easing-silky), 
+                border-color var(--duration-lux) var(--easing-silky),
+                padding var(--duration-lux) var(--easing-silky);
 }
-header.scrolled { height: 70px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
 
-.brand-logo { font-family: var(--font-serif); font-size: 24px; letter-spacing: 0.2em; }
+header.scrolled {
+    height: 80px;
+    padding: 0 60px;
+    background-color: var(--bg-trans-lux);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: var(--border-lux);
+}
 
-.cinematic-frame { overflow: hidden; clip-path: inset(2% 2% 2% 2%); transition: var(--transition-silky); }
-.cinematic-frame img { width: 100%; transform: scale(1.08); transition: var(--transition-silky); }
-.cinematic-frame:hover { clip-path: inset(0% 0% 0% 0%); }
-.cinematic-frame:hover img { transform: scale(1.02); }
+.brand-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: var(--text-deep);
+    text-decoration: none;
+    transition: transform var(--duration-lux) var(--easing-silky), opacity var(--duration-lux) var(--easing-silky);
+}
 
-.cinematic-hero { height: 100vh; display: flex; align-items: center; padding-left: 8%; }
-.product-canvas { padding: 100px 12%; }
-.overlapping-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.offset-node { margin-top: 100px; }
-.scroll-reveal { opacity: 0; transform: translateY(40px); transition: var(--transition-silky); }
-.scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+header.scrolled .brand-logo {
+    transform: scale(0.92);
+    opacity: 0.85;
+}
+
+nav ul {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.nav-link {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-editorial);
+    text-decoration: none;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; width: 0; height: 1px;
+    background-color: var(--accent-bronze);
+    transition: width 0.6s var(--easing-silky);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.cart-indicator-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+}
+
+.bag-counter-node {
+    font-weight: 400;
+    color: var(--accent-bronze);
+}
+
+.cinematic-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.hero-parallax-bg {
+    position: absolute;
+    top: -10%; left: -10%; width: 120%; height: 120%;
+    background-image: url('https://unsplash.com');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.07;
+    will-change: transform;
+}
+
+.hero-blend-curtain {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0) 60%, var(--bg-base) 100%);
+    pointer-events: none;
+}
+
+.hero-overlay-card {
+    max-width: 650px;
+    position: relative;
+    z-index: 5;
+}
+
+.laboratory-badge {
+    display: inline-block;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--accent-bronze);
+    margin-bottom: 30px;
+    border-left: 2px solid var(--accent-bronze);
+    padding-left: 15px;
+}
+
+.cinematic-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 6vw, 78px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text-deep);
+    margin-bottom: 30px;
+}
+
+.italic-serif {
+    font-style: italic;
+    font-weight: 300;
+}
+
+.cinematic-hero p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 45px;
+    max-width: 480px;
+}
+
+.luxury-action-btn {
+    background: transparent;
+    border: none;
+    padding: 15px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: var(--text-deep);
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.btn-line {
+    width: 40px;
+    height: 1px;
+    background-color: var(--text-deep);
+    margin-top: 8px;
+    transition: width 0.6s var(--easing-silky);
+}
+
+.luxury-action-btn:hover .btn-line {
+    width: 120px;
+    background-color: var(--accent-bronze);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.indicator-line {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--text-deep) 50%, transparent 50%);
+    background-size: 100% 200%;
+    animation: luxurious-drop 2.2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes luxurious-drop {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% -200%; }
+}
+
+.exhibition-marquee {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-lux);
+    border-bottom: 1px solid var(--border-lux);
+    overflow: hidden;
+    background: #fbfbfb;
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: smooth-scroll-marquee 30s linear infinite;
+}
+
+.marquee-track span {
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: var(--text-whisper);
+    padding-right: 50px;
+    white-space: nowrap;
+}
+
+@keyframes smooth-scroll-marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+
+
+.product-canvas {
+    padding: 160px 10%;
+    z-index: 3;
+    position: relative;
+}
+
+.canvas-meta-header {
+    margin-bottom: 120px;
+}
+
+.section-num {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--accent-bronze);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.canvas-meta-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.horizontal-divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--accent-bronze);
+    margin-top: 25px;
+}
+
+.overlapping-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 160px;
+    column-gap: 100px;
+}
+
+.product-node {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--bg-base);
+}
+
+.offset-node {
+    margin-top: 180px;
+}
+
+.cinematic-reveal-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    position: relative;
+    background-color: #f7f7f7;
+    /* Elegant micro inset mask that expands smoothly on hover */
+    clip-path: inset(2.5% 2.5% 2.5% 2.5%);
+    transition: clip-path var(--duration-lux) var(--easing-silky);
+}
+
+.cinematic-reveal-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.12);
+    transition: transform var(--duration-lux) var(--easing-silky);
+}
+
+.image-overlay-veil {
+    position: absolute;
+    top:0; left:0; width:100%; height:100%;
+    background-color: var(--text-deep);
+    opacity: 0.03;
+    transition: opacity 0.8s var(--easing-silky);
+}
+
+.product-category-tag {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--text-whisper);
+    z-index: 4;
+}
+
+.product-node:hover .cinematic-reveal-frame {
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.product-node:hover .cinematic-reveal-frame img {
+    transform: scale(1.03);
+}
