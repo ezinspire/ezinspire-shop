@@ -4,43 +4,173 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZINSPIRE | L'Atelier Innovation</title>
-   
-    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <div class="ambient-glow"></div>
+    <div class="glass-grain-overlay"></div>
+
     <header id="mainHeader">
         <a href="#" class="brand-logo">EZINSPIRE</a>
-        <nav><ul><li>The Exhibition</li><li>The Collection</li></ul></nav>
-        <div class="cart-indicator">Bag (<span id="bagCount">0</span>)</div>
+        <nav>
+            <ul>
+                <li><a href="#exhibition" class="nav-link">The Exhibition</a></li>
+                <li><a href="#curations" class="nav-link">The Collection</a></li>
+                <li><a href="#philosophy" class="nav-link">The Manifesto</a></li>
+            </ul>
+        </nav>
+        <div class="cart-indicator-wrap">
+            <span class="bag-txt">Maison Bag</span>
+            <div class="bag-counter-node">(<span id="bagCount">0</span>)</div>
+        </div>
     </header>
 
     <main>
-    
+        
         <section class="cinematic-hero">
+            <div class="hero-parallax-bg" id="heroBg"></div>
+            <div class="hero-blend-curtain"></div>
+            
             <div class="hero-overlay-card">
-                <h1>Liquid Luxury.<br>Sensory Intimacy.</h1>
-                <p>Innovative skincare and perfumery.</p>
-                <button class="luxury-action-btn">Explore</button>
+                <span class="laboratory-badge">Molecular Skincare & Haute Perfumery</span>
+                <h1 class="fade-in-up">Liquid Luxury.<br><span class="italic-serif">Sensory Intimacy.</span></h1>
+                <p class="fade-in-up delay-1">An artistic breakthrough in clinical cell-resurfacing bio-chemistry and heavy glass aroma monoliths. Crafted for the avant-garde collector.</p>
+                <div class="btn-wrap fade-in-up delay-2">
+                    <button class="luxury-action-btn" id="exploreBtn">
+                        <span>Explore The Vault</span>
+                        <div class="btn-line"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="indicator-line"></div>
+            </div>
+        </section>
+
+        <section class="exhibition-marquee" id="exhibition">
+            <div class="marquee-track">
+                <span>BREAKTHROUGH SKINCARE • HAUTE PERFUMERY • MOLECULAR ARTISTRY • </span>
+                <span>BREAKTHROUGH SKINCARE • HAUTE PERFUMERY • MOLECULAR ARTISTRY • </span>
             </div>
         </section>
 
         <section class="product-canvas" id="curations">
+            <div class="canvas-meta-header scroll-reveal">
+                <span class="section-num">01 // BRANDS SELECTION</span>
+                <h2>The Curated Artifacts</h2>
+                <div class="horizontal-divider"></div>
+            </div>
+
             <div class="overlapping-grid">
+                
                 <article class="product-node scroll-reveal">
-                    <div class="cinematic-frame"><img src="skin-product.jpg" alt="Peel Shots"></div>
-                    <h3>Resurfacing Peel Shot</h3>
-                    <button class="bag-action-trigger">Acquire</button>
+                    <div class="cinematic-reveal-frame">
+                       
+                        <img src="https://unsplash.com" alt="EZINSPIRE Resurfacing Peel Shot">
+                        <div class="image-overlay-veil"></div>
+                        <span class="product-category-tag">Biochemistry // Treatment</span>
+                    </div>
+                    <div class="node-meta">
+                        <div class="title-row">
+                            <h3>Resurfacing Peel Shot</h3>
+                            <span class="price-tag">£75.00</span>
+                        </div>
+                        <p class="product-desc">Advanced cellular skin-peel capsules engineered to reset dermal texturing overnight.</p>
+                        <button class="bag-action-trigger">
+                            <span class="btn-txt">Acquire Specimen</span>
+                            <span class="btn-hover-txt">Secure Allocation</span>
+                        </button>
+                    </div>
                 </article>
+
                 <article class="product-node offset-node scroll-reveal">
-                    <div class="cinematic-frame"><img src="perfume.jpg" alt="Oud"></div>
-                    <h3>Oud Infusion N°910</h3>
-                    <button class="bag-action-trigger">Acquire</button>
+                    <div class="cinematic-reveal-frame">
+                        <img src="https://unsplash.com" alt="EZINSPIRE Stretch Mark Correcting Cream">
+                        <div class="image-overlay-veil"></div>
+                        <span class="product-category-tag">Dermal Sculpting // Complex</span>
+                    </div>
+                    <div class="node-meta">
+                        <div class="title-row">
+                            <h3>Dermal Matrix Elastic Cream</h3>
+                            <span class="price-tag">£90.00</span>
+                        </div>
+                        <p class="product-desc">Highly targeted tissue renewal structure engineered to fade stretch lines smoothly.</p>
+                        <button class="bag-action-trigger">
+                            <span class="btn-txt">Acquire Specimen</span>
+                            <span class="btn-hover-txt">Secure Allocation</span>
+                        </button>
+                    </div>
                 </article>
+
+                <article class="product-node scroll-reveal">
+                    <div class="cinematic-reveal-frame">
+                        <img src="https://unsplash.com" alt="EZINSPIRE Oud Infusion">
+                        <div class="image-overlay-veil"></div>
+                        <span class="product-category-tag">Aroma Architecture // Heavy Glass</span>
+                    </div>
+                    <div class="node-meta">
+                        <div class="title-row">
+                            <h3>Oud & Ash Infusion N°910</h3>
+                            <span class="price-tag">£145.00</span>
+                        </div>
+                        <p class="product-desc">Volatile oil structures mapped into monolithic smoky wood and raw absolute vectors.</p>
+                        <button class="bag-action-trigger">
+                            <span class="btn-txt">Acquire Specimen</span>
+                            <span class="btn-hover-txt">Secure Allocation</span>
+                        </button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="brand-philosophy-statement" id="philosophy">
+            <div class="statement-container scroll-reveal">
+                <span class="manifesto-badge">The Sanctuary Manifesto</span>
+                <blockquote class="cinematic-quote">
+                    "We do not build cosmetics. We construct high-fidelity digital expressionism, biological breakthrough chemistry, and structural layers that rewrite sensory luxury entirely."
+                </blockquote>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand-block">
+                <h3>EZINSPIRE</h3>
+                <p>A closed sanctuary built around premium private consumer access and modern molecular evolution profiles.</p>
+            </div>
+            <div class="footer-links-block">
+                <h4>Allotments</h4>
+                <ul>
+                    <li><a href="#">The Organic Vault</a></li>
+                    <li><a href="#">Clinical Testing Dossier</a></li>
+                </ul>
+            </div>
+            <div class="footer-links-block">
+                <h4>Logistics</h4>
+                <ul>
+                    <li><a href="#">UK Territorial Dispatch</a></li>
+                    <li><a href="#">Ireland Mainland Routes</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-bar">
+            <span>&copy; 2026 EZINSPIRE Flagship Laboratory. All Rights Reserved.</span>
+            <span class="secure-tag">UK & IE SECURE DISTRIBUTION HOUSES</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
 
     <script src="script.js"></script>
 </body>
