@@ -3,146 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EZINSPIRE | L'Atelier Haute Beauté</title>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <title>EZINSPIRE | L'Atelier Innovation</title>
+    <!-- Premium Editorial Typography -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <button class="sensory-audio-node" id="audioBtn">
-        <span class="audio-label-text">Mute Ambient Vibe</span>
-        <div class="audio-bars">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-    </button>
-
-    <header>
+    <!-- Silky Header -->
+    <header id="mainHeader">
         <a href="#" class="brand-logo">EZINSPIRE</a>
-        <nav>
-            <ul>
-                <li><a href="#exhibition">The Exhibition</a></li>
-                <li><a href="#curations">The Collection</a></li>
-                <li><a href="#manifesto">The Manifesto</a></li>
-            </ul>
-        </nav>
-        <div class="cart-indicator">Maison Bag (<span id="bagCount">0</span>)</div>
+        <nav><ul><li>The Exhibition</li><li>The Collection</li></ul></nav>
+        <div class="cart-indicator">Bag (<span id="bagCount">0</span>)</div>
     </header>
 
     <main>
-       
+        <!-- Hero Section -->
         <section class="cinematic-hero">
-            <div class="hero-bg-zoom"></div>
             <div class="hero-overlay-card">
-                <span class="region-badge">Exclusively Dispatched Within UK & Ireland</span>
                 <h1>Liquid Luxury.<br>Sensory Intimacy.</h1>
-                <p>An artistic showcase of rare mineral formulations and haute perfumery crafted exclusively for the modern avant-garde collector.</p>
-                <button class="luxury-action-btn" id="scrollTrigger">Explore The Vault</button>
+                <p>Innovative skincare and perfumery.</p>
+                <button class="luxury-action-btn">Explore</button>
             </div>
         </section>
 
-        <section class="carousel-exhibition" id="exhibition">
-            <div class="carousel-track-container">
-                <div class="carousel-track" id="carouselTrack">
-                  
-                    <div class="carousel-slide active">
-                        <img src="https://unsplash.com" alt="Haute Cosmetics Extract">
-                        <div class="slide-caption">
-                            <h3>01 / The Alchemical Resin</h3>
-                            <p>Deep mineral vectors merging directly with organic protective lipids.</p>
-                        </div>
-                    </div>
-                   
-                    <div class="carousel-slide">
-                        <img src="https://unsplash.com" alt="Premium Fragrance Silhouettes">
-                        <div class="slide-caption">
-                            <h3>02 / Rare Scent Architecture</h3>
-                            <p>Volatile oil structures mapped and sealed into monolithic heavy glass.</p>
-                        </div>
-                    </div>
-                   
-                    <div class="carousel-slide">
-                        <img src="https://unsplash.com" alt="Botanical Oils">
-                        <div class="slide-caption">
-                            <h3>03 / Intone Botanicals</h3>
-                            <p>Pure alpine compounds extracted slowly through physical vacuum processes.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-         
-            <div class="carousel-controls">
-                <button class="nav-arrow" id="prevBtn">Previous Move</button>
-                <button class="nav-arrow" id="nextBtn">Next Move</button>
-            </div>
-        </section>
-
+        <!-- Products -->
         <section class="product-canvas" id="curations">
-            <div class="canvas-header">
-                <h2>The Curated Artifacts</h2>
-                <p>Available in limited small-batch allocations</p>
-            </div>
-
             <div class="overlapping-grid">
-                
-                <article class="product-node">
-                    <div class="node-image-frame">
-                        <img src="https://unsplash.com" alt="Premium Lip Care">
-                    </div>
-                    <div class="node-info-card">
-                        <span class="node-tag">Maison Apothecary</span>
-                        <h3>Shilajit High-Gloss Elixir</h3>
-                        <span class="node-price">£45.00</span>
-                        <button class="bag-action-trigger">Acquire Specimen</button>
-                    </div>
+                <article class="product-node scroll-reveal">
+                    <div class="cinematic-frame"><img src="skin-product.jpg" alt="Peel Shots"></div>
+                    <h3>Resurfacing Peel Shot</h3>
+                    <button class="bag-action-trigger">Acquire</button>
                 </article>
-
-                <article class="product-node offset-node">
-                    <div class="node-image-frame">
-                        <img src="https://unsplash.com" alt="Fine Perfumery Profile">
-                    </div>
-                    <div class="node-info-card">
-                        <span class="node-tag">Fine Fragrance Library</span>
-                        <h3>Oud & Ash Infusion N°910</h3>
-                        <span class="node-price">£65.00</span>
-                        <button class="bag-action-trigger uk-ie-only-lock">Acquire Specimen</button>
-                    </div>
+                <article class="product-node offset-node scroll-reveal">
+                    <div class="cinematic-frame"><img src="perfume.jpg" alt="Oud"></div>
+                    <h3>Oud Infusion N°910</h3>
+                    <button class="bag-action-trigger">Acquire</button>
                 </article>
             </div>
         </section>
     </main>
 
-    <footer id="manifesto">
-        <div class="footer-layout">
-            <div class="footer-col-main">
-                <h3>EZINSPIRE</h3>
-                <p>A closed sanctuary built around high-fidelity cosmetic chemistry, structural fragrance layers, and cinematic digital expressionism.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Allotments</h4>
-                <ul>
-                    <li><a href="#">The Organic Vault</a></li>
-                    <li><a href="#">Pure Parfums</a></li>
-                    <li><a href="#">Safety & Testing Dossier</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Logistics Control</h4>
-                <ul>
-                    <li><a href="#">UK Territorial Dispatch</a></li>
-                    <li><a href="#">Ireland Mainland Routes</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-signature">
-            <div>&copy; 2026 EZINSPIRE Flagship Laboratory. Built for private consumer access.</div>
-            <div class="gold-routing-tag">UK & IE SECURE DISTRIBUTION HOUSES</div>
-        </div>
-    </footer>
-
     <script src="script.js"></script>
 </body>
 </html>
+
