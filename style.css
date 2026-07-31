@@ -1,34 +1,17 @@
 :root {
-    --bg-white: #ffffff;
-    --text-main: #0d0d0d;
-    --bronze: #8a7355;
-    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --bg-pure: #ffffff;
+    --text-charcoal: #0e0e0e;
+    --luxury-gold-bronze: #8a7355;
+    --bezier-silk: cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-white); color: var(--text-main); margin: 0; }
-
-.pearly-aurora-glow { position: fixed; top: -20%; left: 30%; width: 90vw; height: 70vh; background: radial-gradient(circle, rgba(138, 115, 85, 0.04) 0%, rgba(255,255,255,0) 80%); pointer-events: none; }
-
-header { position: fixed; top: 0; width: 100%; height: 100px; display: flex; justify-content: space-between; align-items: center; padding: 0 50px; z-index: 1000; transition: all 0.5s var(--ease); }
-header.scrolled { background-color: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); height: 70px; }
-
-.brand-logo { font-family: 'Cormorant Garamond', serif; font-size: 24px; text-transform: uppercase; letter-spacing: 0.3em; text-decoration: none; color: var(--text-main); }
-
-.celestial-hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; position: relative; }
-.hero-image-veil-back { position: absolute; top:0; left:0; width:100%; height:100%; background: url('https://unsplash.com') center/cover; opacity: 0.05; }
-.hero-central-theatre { position: relative; z-index: 2; }
-.celestial-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 300; }
-.fluid-serif { font-style: italic; }
-
-.product-canvas { padding: 100px 10%; }
-.asymmetric-gallery-web { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.museum-frame { overflow: hidden; aspect-ratio: 3/4; }
-.museum-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
-.luxury-artifact-card:hover .museum-frame img { transform: scale(1.05); }
-
-.acquire-specimen-trigger { background: transparent; border: 1px solid var(--text-main); padding: 10px 20px; text-transform: uppercase; font-size: 10px; letter-spacing: 0.2em; cursor: pointer; }
-.acquire-specimen-trigger:hover { background: var(--text-main); color: #fff; }
-
-.fade-up-lux { animation: fadeInUp 1s var(--ease) forwards; opacity: 0; }
-@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } from { transform: translateY(20px); } }
-.delay-2 { animation-delay: 0.3s; }
+body { font-family: 'Montserrat', sans-serif; color: var(--text-charcoal); background: var(--bg-pure); }
+.brand-logo { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.35em; }
+header { position: fixed; top: 0; width: 100%; height: 130px; display: flex; justify-content: space-between; padding: 0 80px; z-index: 1000; transition: all 0.5s; }
+header.scrolled { height: 80px; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+.hero-editorial-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 100px; }
+.cinematic-headline { font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 300; }
+.editorial-asymmetric-products-web { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
+.artifact-display-node img { width: 100%; transition: transform 0.5s; }
+.artifact-display-node:hover img { transform: scale(1.05); }
+.scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 1s; }
+.reveal-active { opacity: 1; transform: translateY(0); }
