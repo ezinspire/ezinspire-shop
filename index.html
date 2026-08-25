@@ -6,45 +6,111 @@
     <title>EZINSPIRE | L'Atelier Haute Cosmétique</title>
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header id="mainHeader">
-        <a href="#" class="brand-logo">EZINSPIRE</a>
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="#exhibition" class="nav-link">The Lookbook</a></li>
-                <li><a href="#curations" class="nav-link">The Collection</a></li>
-            </ul>
-        </nav>
-        <div class="cart-indicator-wrap" id="cartTrigger">
-            <span class="bag-txt">Maison Bag</span>
-            <div class="bag-counter-node">(<span id="bagCount">0</span>)</div>
+        <div class="nav-left">
+            <button id="menuToggle" class="menu-btn" aria-label="Open Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="desktop-links">
+                <a href="#exhibition" class="nav-item">The Lookbook</a>
+                <a href="#curations" class="nav-item">The Collection</a>
+            </nav>
+        </div>
+        
+        <div class="nav-center">
+            <a href="#" class="logo">EZINSPIRE</a>
+        </div>
+        
+        <div class="nav-right">
+            <div class="cart-trigger">
+                <span class="bag-txt">Maison Bag</span>
+                <span class="bag-count-wrapper">(<span id="bagCount">0</span>)</span>
+            </div>
         </div>
     </header>
 
+    <div id="navDrawer" class="drawer-overlay">
+        <div class="drawer-inner-header">
+            <button id="drawerClose" class="close-btn">&times;</button>
+        </div>
+        <nav class="drawer-menu">
+            <a href="#exhibition" class="drawer-item-link">01 / The Lookbook</a>
+            <a href="#curations" class="drawer-item-link">02 / Clinical Skincare Lab</a>
+            <a href="#footer-anchor" class="drawer-item-link">03 / Logistics & Archive</a>
+        </nav>
+    </div>
+
     <main>
-        <section class="cinematic-stage">
-            <h1>Liquid Luxury.</h1>
-            <p>Biotechnology encapsulated within heavy stained-white glass.</p>
+        
+        <section class="hero-canvas" id="exhibition">
+            <div id="heroBg" class="hero-parallax-bg"></div>
+            <div class="hero-content scroll-reveal">
+                <h1>Liquid Luxury.</h1>
+                <p>Biotechnology encapsulated within heavy stained-white glass.</p>
+                <button id="exploreBtn" class="cta-outline">Explore The Vault</button>
+            </div>
         </section>
 
-        <section class="product-canvas" id="curations">
-            <h2>The Curated Specimen Shells</h2>
-            <div class="asymmetric-editorial-web">
-                <article class="artifact-node">
-                    <img src="https://unsplash.com" alt="Resurfacing Peel Shot">
-                    <h3>Resurfacing Peel Shot</h3>
-                    <span class="price-node">£75.00</span>
+        <section class="catalog-section" id="curations">
+            <div class="section-header-block scroll-reveal">
+                <h2>The Curated Specimen Shells</h2>
+                <div class="ticker-marquee">
+                    <span>STAINED WHITE GLASS CORE • PURE SILK METALLIC CLOSURES • MOLECULAR SKIN RESURFACING •</span>
+                </div>
+            </div>
+
+            <div class="editorial-masonry-grid">
+                <!-- Specimen Item -->
+                <article class="product-card scroll-reveal">
+                    <div class="image-frame">
+                        <img src="https://unsplash.com" alt="Resurfacing Peel">
+                    </div>
+                    <div class="product-meta">
+                        <h3>Resurfacing Peel Shot</h3>
+                        <p class="specs">14oz Heavy Glass // Active Retinoid Matrix</p>
+                        <span class="price">£75.00</span>
+                        <button class="acquire-action-trigger">Secure Allocation</button>
+                    </div>
                 </article>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>EZINSPIRE © 2024</p>
+    <footer id="footer-anchor" class="atelier-footer">
+        <div class="footer-grid-wrapper">
+            <div class="footer-column brand-creed-column">
+                <h3>THE SANCTUARY CREED</h3>
+                <p class="creed-text">"We do not build cosmetics. We formulate digital and physical expressionism, wrapping specialized molecular science in solid architectural vessels."</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>ALLOTMENTS</h3>
+                <ul>
+                    <li><a href="#curations">Skincare Matrix</a></li>
+                    <li><a href="#exhibition">Visual Exhibition</a></li>
+                    <li><a href="#">Private Atelier Vault</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>LOGISTICS</h3>
+                <ul>
+                    <li><a href="#">Corporate Allocation</a></li>
+                    <li><a href="#">Secure Architecture</a></li>
+                    <li><a href="#">Maison Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>EZINSPIRE &copy; 2026. All Rights Reserved.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
