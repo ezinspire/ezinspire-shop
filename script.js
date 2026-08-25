@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("reveal-active");
-               
                 engine.unobserve(entry.target);
             }
         });
