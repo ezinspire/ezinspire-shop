@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZINSPIRE | L'Atelier Haute Cosmétique</title>
+    
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@100;200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header id="mainHeader">
         <div class="nav-left">
-            <button id="menuToggle" class="menu-btn" aria-label="Open Menu">
+            <button id="menuToggle" class="menu-btn" aria-label="Open Studio Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
@@ -37,12 +38,12 @@
 
     <div id="navDrawer" class="drawer-overlay">
         <div class="drawer-inner-header">
-            <button id="drawerClose" class="close-btn">&times;</button>
+            <button id="drawerClose" class="close-btn" aria-label="Close Studio Menu">&times;</button>
         </div>
         <nav class="drawer-menu">
             <a href="#exhibition" class="drawer-item-link">01 / The Lookbook</a>
             <a href="#curations" class="drawer-item-link">02 / Clinical Skincare Lab</a>
-            <a href="#footer-anchor" class="drawer-item-link">03 / Logistics & Archive</a>
+            <a href="#footer-anchor" class="drawer-item-link">03 / Structural Archives</a>
         </nav>
     </div>
 
@@ -51,8 +52,9 @@
         <section class="hero-canvas" id="exhibition">
             <div id="heroBg" class="hero-parallax-bg"></div>
             <div class="hero-content scroll-reveal">
+                <span class="hero-pre-title">L'ATELIER SERIES</span>
                 <h1>Liquid Luxury.</h1>
-                <p>Biotechnology encapsulated within heavy stained-white glass.</p>
+                <p>Advanced molecular biotechnology encapsulated within heavy, hand-sculpted architectural glassware specimens.</p>
                 <button id="exploreBtn" class="cta-outline">Explore The Vault</button>
             </div>
         </section>
@@ -60,24 +62,38 @@
         <section class="catalog-section" id="curations">
             <div class="section-header-block scroll-reveal">
                 <h2>The Curated Specimen Shells</h2>
+               
                 <div class="ticker-marquee">
-                    <span>STAINED WHITE GLASS CORE • PURE SILK METALLIC CLOSURES • MOLECULAR SKIN RESURFACING •</span>
+                    <span>MOLECULAR RESURFACING MATRIX • BOTANICAL DISTILLATION 009 • STAINED WHITE GLASS ARCHITECTURE •</span>
                 </div>
             </div>
 
             <div class="editorial-masonry-grid">
-                <!-- Specimen Item -->
+                
                 <article class="product-card scroll-reveal">
                     <div class="image-frame">
-                        <img src="https://unsplash.com" alt="Resurfacing Peel">
+                        <img src="https://unsplash.com" alt="Resurfacing Peel Shot Container">
                     </div>
                     <div class="product-meta">
                         <h3>Resurfacing Peel Shot</h3>
-                        <p class="specs">14oz Heavy Glass // Active Retinoid Matrix</p>
+                        <p class="specs">14oz Solid White Glass // Active Retinoid Complex</p>
                         <span class="price">£75.00</span>
                         <button class="acquire-action-trigger">Secure Allocation</button>
                     </div>
                 </article>
+
+                <article class="product-card scroll-reveal alternative-offset">
+                    <div class="image-frame">
+                        <img src="https://unsplash.com" alt="Haute Perfumery Extraction Specimen">
+                    </div>
+                    <div class="product-meta">
+                        <h3>Oud &amp; Ash Extraction</h3>
+                        <p class="specs">Heavy Monolithic Crystal // Pure Oil Absolute</p>
+                        <span class="price">£145.00</span>
+                        <button class="acquire-action-trigger">Secure Allocation</button>
+                    </div>
+                </article>
+
             </div>
         </section>
     </main>
@@ -86,15 +102,15 @@
         <div class="footer-grid-wrapper">
             <div class="footer-column brand-creed-column">
                 <h3>THE SANCTUARY CREED</h3>
-                <p class="creed-text">"We do not build cosmetics. We formulate digital and physical expressionism, wrapping specialized molecular science in solid architectural vessels."</p>
+                <p class="creed-text">"We do not mass manufacture cosmetics. We structure physical and artistic expressionism, encasing specialized biological sciences within permanent, architectural vessels."</p>
             </div>
             
             <div class="footer-column">
                 <h3>ALLOTMENTS</h3>
                 <ul>
-                    <li><a href="#curations">Skincare Matrix</a></li>
-                    <li><a href="#exhibition">Visual Exhibition</a></li>
-                    <li><a href="#">Private Atelier Vault</a></li>
+                    <li><a href="#curations">Molecular Skincare</a></li>
+                    <li><a href="#curations">Haute Perfumery</a></li>
+                    <li><a href="#exhibition">Visual Campaigns</a></li>
                 </ul>
             </div>
             
@@ -102,15 +118,16 @@
                 <h3>LOGISTICS</h3>
                 <ul>
                     <li><a href="#">Corporate Allocation</a></li>
-                    <li><a href="#">Secure Architecture</a></li>
+                    <li><a href="#">Secure Delivery Node</a></li>
                     <li><a href="#">Maison Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>EZINSPIRE &copy; 2026. All Rights Reserved.</p>
+            <p>EZINSPIRE &copy; 2026. All Rights Reserved. Creative Directive Blueprint.</p>
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
